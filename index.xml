@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Guia do Workshop de Android do Recrutamento</title>
-    <link>https://warguide.hackerschool.io/</link>
+    <link>https://filipe-varela.github.io/warguide.hackerschool.io/</link>
     <description>Guia do Workshop de Android do Recrutamento</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 11 Dec 2021 20:12:18 +0000</lastBuildDate>
     
-    <atom:link href="https://warguide.hackerschool.io/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://filipe-varela.github.io/warguide.hackerschool.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Textview</title>
-      <link>https://warguide.hackerschool.io/code/textview/</link>
+      <link>https://filipe-varela.github.io/warguide.hackerschool.io/code/textview/</link>
       <pubDate>Sat, 11 Dec 2021 20:12:18 +0000</pubDate>
       
-      <guid>https://warguide.hackerschool.io/code/textview/</guid>
+      <guid>https://filipe-varela.github.io/warguide.hackerschool.io/code/textview/</guid>
       <description>&lt;h1 id=&#34;textview&#34;&gt;TextView&lt;/h1&gt;
 &lt;p&gt;View para mostrar texto.
 Usado para os casos como títulos, textos curtos ou longos e para indicar informações.&lt;/p&gt;

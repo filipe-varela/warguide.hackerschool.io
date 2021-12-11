@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Guia do Workshop de Android do Recrutamento</title>
-    <link>https://warguide.hackerschool.io/categories/</link>
+    <link>https://filipe-varela.github.io/warguide.hackerschool.io/categories/</link>
     <description>Guia do Workshop de Android do Recrutamento (Categories)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-    <atom:link href="https://warguide.hackerschool.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://filipe-varela.github.io/warguide.hackerschool.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>
