@@ -2,16 +2,75 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://filipe-varela.github.io/warguide.hackerschool.io/code/</loc>
-    <lastmod>2021-12-11T20:12:18+00:00</lastmod>
-  </url><url>
     <loc>https://filipe-varela.github.io/warguide.hackerschool.io/</loc>
-    <lastmod>2021-12-11T20:12:18+00:00</lastmod>
+    <lastmod>2021-12-15T14:35:45+00:00</lastmod>
+  </url><url>
+    <loc>https://filipe-varela.github.io/warguide.hackerschool.io/tasks/slide/</loc>
+    <lastmod>2021-12-15T14:35:45+00:00</lastmod>
+  </url><url>
+    <loc>https://filipe-varela.github.io/warguide.hackerschool.io/tasks/</loc>
+    <lastmod>2021-12-15T14:35:45+00:00</lastmod>
+  </url><url>
+    <loc>https://filipe-varela.github.io/warguide.hackerschool.io/tasks/pomodoro/</loc>
+    <lastmod>2021-12-15T14:35:33+00:00</lastmod>
+  </url><url>
+    <loc>https://filipe-varela.github.io/warguide.hackerschool.io/tasks/apimania/</loc>
+    <lastmod>2021-12-15T14:32:37+00:00</lastmod>
+  </url><url>
+    <loc>https://filipe-varela.github.io/warguide.hackerschool.io/tasks/livre/</loc>
+    <lastmod>2021-12-15T14:32:32+00:00</lastmod>
+  </url><url>
+    <loc>https://filipe-varela.github.io/warguide.hackerschool.io/tasks/calculadora_de_gestos/</loc>
+    <lastmod>2021-12-15T14:32:24+00:00</lastmod>
+  </url><url>
+    <loc>https://filipe-varela.github.io/warguide.hackerschool.io/tasks/utils/</loc>
+    <lastmod>2021-12-15T14:32:11+00:00</lastmod>
+  </url><url>
+    <loc>https://filipe-varela.github.io/warguide.hackerschool.io/tasks/notas/</loc>
+    <lastmod>2021-12-15T14:32:06+00:00</lastmod>
+  </url><url>
+    <loc>https://filipe-varela.github.io/warguide.hackerschool.io/tasks/jetcompose/</loc>
+    <lastmod>2021-12-15T14:31:57+00:00</lastmod>
+  </url><url>
+    <loc>https://filipe-varela.github.io/warguide.hackerschool.io/tasks/slider_colorido/</loc>
+    <lastmod>2021-12-15T14:31:50+00:00</lastmod>
+  </url><url>
+    <loc>https://filipe-varela.github.io/warguide.hackerschool.io/tasks/selecionador_de_numeros/</loc>
+    <lastmod>2021-12-15T14:31:38+00:00</lastmod>
+  </url><url>
+    <loc>https://filipe-varela.github.io/warguide.hackerschool.io/tasks/pagina_setup/</loc>
+    <lastmod>2021-12-15T14:31:23+00:00</lastmod>
+  </url><url>
+    <loc>https://filipe-varela.github.io/warguide.hackerschool.io/tasks/menu/</loc>
+    <lastmod>2021-12-15T14:31:11+00:00</lastmod>
+  </url><url>
+    <loc>https://filipe-varela.github.io/warguide.hackerschool.io/code/</loc>
+    <lastmod>2021-12-15T12:36:04+00:00</lastmod>
+  </url><url>
+    <loc>https://filipe-varela.github.io/warguide.hackerschool.io/code/apk/</loc>
+    <lastmod>2021-12-15T12:36:04+00:00</lastmod>
+  </url><url>
+    <loc>https://filipe-varela.github.io/warguide.hackerschool.io/general/enunciado/</loc>
+    <lastmod>2021-12-11T21:59:25+00:00</lastmod>
+  </url><url>
+    <loc>https://filipe-varela.github.io/warguide.hackerschool.io/general/</loc>
+    <lastmod>2021-12-11T21:59:25+00:00</lastmod>
+  </url><url>
+    <loc>https://filipe-varela.github.io/warguide.hackerschool.io/general/sobre/</loc>
+    <lastmod>2021-12-11T21:59:20+00:00</lastmod>
+  </url><url>
+    <loc>https://filipe-varela.github.io/warguide.hackerschool.io/code/button/</loc>
+    <lastmod>2021-12-11T21:08:03+00:00</lastmod>
   </url><url>
     <loc>https://filipe-varela.github.io/warguide.hackerschool.io/code/textview/</loc>
     <lastmod>2021-12-11T20:12:18+00:00</lastmod>
   </url><url>
+    <loc>https://filipe-varela.github.io/warguide.hackerschool.io/tasks/main/</loc>
+    <lastmod>2021-12-01T15:43:42+00:00</lastmod>
+  </url><url>
     <loc>https://filipe-varela.github.io/warguide.hackerschool.io/categories/</loc>
+  </url><url>
+    <loc>https://filipe-varela.github.io/warguide.hackerschool.io/code/main/</loc>
   </url><url>
     <loc>https://filipe-varela.github.io/warguide.hackerschool.io/tags/</loc>
   </url>

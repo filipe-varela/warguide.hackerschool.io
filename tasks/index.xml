@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Guia do Workshop de Android do Recrutamento</title>
-    <link>https://filipe-varela.github.io/warguide.hackerschool.io/</link>
-    <description>Guia do Workshop de Android do Recrutamento</description>
+    <title>Tasks on Guia do Workshop de Android do Recrutamento</title>
+    <link>https://filipe-varela.github.io/warguide.hackerschool.io/tasks/</link>
+    <description>Guia do Workshop de Android do Recrutamento (Tasks)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-pt</language>
     <lastBuildDate>Wed, 15 Dec 2021 14:35:45 +0000</lastBuildDate>
     
-    <atom:link href="https://filipe-varela.github.io/warguide.hackerschool.io/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://filipe-varela.github.io/warguide.hackerschool.io/tasks/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -252,109 +252,6 @@ Desde que se conduza o utilizador, tudo é permitido.&lt;/p&gt;
     </item>
     
     <item>
-      <title>Montar uma APK</title>
-      <link>https://filipe-varela.github.io/warguide.hackerschool.io/code/apk/</link>
-      <pubDate>Wed, 15 Dec 2021 12:36:04 +0000</pubDate>
-      
-      <guid>https://filipe-varela.github.io/warguide.hackerschool.io/code/apk/</guid>
-      <description>&lt;p&gt;Para montar uma APK é preciso em&amp;hellip;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Enunciado</title>
-      <link>https://filipe-varela.github.io/warguide.hackerschool.io/general/enunciado/</link>
-      <pubDate>Sat, 11 Dec 2021 21:59:25 +0000</pubDate>
-      
-      <guid>https://filipe-varela.github.io/warguide.hackerschool.io/general/enunciado/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;
-&lt;p&gt;Este é o enunciado do projeto de desenvolvimento Android da &lt;a href=&#34;http://hackerschool.io&#34;&gt;HackerSchool&lt;/a&gt;.
-Aqui podes encontrar toda a informação necessária para executar o projeto e qualquer informação que visa a auxiliar a tua execução do projeto.&lt;/p&gt;
-&lt;p&gt;É de notar que, como sendo a primeira iteração deste workshop, estou aberto para modificações e ajustes futuros do mesmo a fim de adequar.&lt;/p&gt;
-&lt;h2 id=&#34;estrutura-do-projeto&#34;&gt;Estrutura do projeto&lt;/h2&gt;
-&lt;p&gt;O projeto consiste na criação de uma aplicação Android que contenha um &lt;a href=&#34;../../tasks/menu&#34;&gt;menu&lt;/a&gt; com submódulos.
-Submódulos esses que representam uma tarefa/funcionalidade cada, podendo ser independentes entre si - cada submódulo não precisa que o utilizar tenha interagido com um outro previamente - ou serem depedentes - necessitando nestes casos, possivelmente, dados submetidos pelo utilizador.
-Os submódulos encontram-se na secção &lt;a href=&#34;../../tasks/main&#34;&gt;Tarefas&lt;/a&gt; e na subsecção desta página: &lt;strong&gt;Lista de conteúdos&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;Durante a execução do projeto, pode ser recorrida como auxilio plataformas como o Stackoverflow, desde que no fim do dia (ou submódulo), se perceba o que foi feito e, ao mesmo tempo, se consiga replicar o mesmo para casos futuros.&lt;/p&gt;
-&lt;p&gt;O &lt;strong&gt;objetivo&lt;/strong&gt; do projeto em si, contudo, é de o recruta ganhar o contácto e conhecimento das várias ferramentas que o Android consegue fornecer e ganhar uma base para concepção de aplicações, quer para telemóveis ou iPhones, quer para outras plataformas.&lt;/p&gt;
-&lt;h2 id=&#34;entrega&#34;&gt;Entrega&lt;/h2&gt;
-&lt;p&gt;A entrega do mesmo é contado como a submissão de dois ficheiros: um ficheiro zip onde contenha o projeto de Android na integra e contenha um &lt;a href=&#34;../../code/videos&#34;&gt;vídeo&lt;/a&gt; de interagir com a aplicação; e uma &lt;a href=&#34;../../code/apk&#34;&gt;apk&lt;/a&gt; do mesmo, para se possível descarregar e testar.&lt;/p&gt;
-&lt;p&gt;A aplicação tem que estar a funcionar, obviamente, quando for entregue e qualquer dúvida que se tenha com a mesma, é depois contactado(a) para esclarecimento. (mas sem medos, não vão sair do recrutamento só porque receberam uma mensagem minha).&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Posteriormente, será marcada uma reunião para verificar os projetos individualmente.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&#34;lista-de-conteúdos&#34;&gt;Lista de conteúdos&lt;/h2&gt;
-&lt;p&gt;Tem-se as seguintes tarefas para o projeto:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Minimo
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;../../tasks/menu&#34;&gt;Menu Principal&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;../../tasks/pagina_setup&#34;&gt;Página de Setup&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;../../tasks/slide&#34;&gt;Slide de Apresentação&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;../../tasks/slider_colorido&#34;&gt;Slider Colorido&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;../../tasks/utils&#34;&gt;Utils&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;../../tasks/apimania&#34;&gt;API Mania&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;Opcionais
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;../../tasks/selecionador_de_numeros&#34;&gt;Selecionador de Número&lt;/a&gt; (&lt;em&gt;Fácil&lt;/em&gt;)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;../../tasks/pomodoro&#34;&gt;Pomodoro Timer&lt;/a&gt; (&lt;em&gt;Fácil/Médio&lt;/em&gt;)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;../../tasks/calculadora_de_gestos&#34;&gt;Calculadora de Gestos&lt;/a&gt; (&lt;em&gt;Médio/Difícil&lt;/em&gt;)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;../../tasks/notas&#34;&gt;Bloco de Notas&lt;/a&gt; (&lt;em&gt;Difícil&lt;/em&gt;)&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;Livre
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;../../tasks/jetcompose&#34;&gt;JetCompose&lt;/a&gt; (&lt;em&gt;Lendário&lt;/em&gt;)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;../../tasks/livre&#34;&gt;Projeto Livre&lt;/a&gt; (&lt;em&gt;1/0&lt;/em&gt;)&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Cada tarefa tem um objetivo e dificuldade associada, podendo ter algumas sugestões ou bónus para enriquecer mais a mesma para além do minimo que é pedido.
-É recomendado no nível &lt;em&gt;Mínimo&lt;/em&gt;, seguir pela ordem demonstrada, enquanto as restantes não têm ordem em especifico.&lt;/p&gt;
-&lt;h2 id=&#34;alguns-links-úteis&#34;&gt;Alguns Links úteis&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://developer.android.com/&#34;&gt;Android For Developers&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://material.io&#34;&gt;Material.io&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://codelabs.developers.google.com/?product=android&#34;&gt;Google Codelabs&lt;/a&gt; - Este até será melhor procurar na net &lt;code&gt;&amp;lt;tópico&amp;gt; codelab&lt;/code&gt;, pode ser mais fácil&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Sobre</title>
-      <link>https://filipe-varela.github.io/warguide.hackerschool.io/general/sobre/</link>
-      <pubDate>Sat, 11 Dec 2021 21:59:20 +0000</pubDate>
-      
-      <guid>https://filipe-varela.github.io/warguide.hackerschool.io/general/sobre/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Button</title>
-      <link>https://filipe-varela.github.io/warguide.hackerschool.io/code/button/</link>
-      <pubDate>Sat, 11 Dec 2021 21:08:03 +0000</pubDate>
-      
-      <guid>https://filipe-varela.github.io/warguide.hackerschool.io/code/button/</guid>
-      <description>&lt;h1 id=&#34;button&#34;&gt;Button&lt;/h1&gt;
-&lt;p&gt;Botão visual do Android&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Textview</title>
-      <link>https://filipe-varela.github.io/warguide.hackerschool.io/code/textview/</link>
-      <pubDate>Sat, 11 Dec 2021 20:12:18 +0000</pubDate>
-      
-      <guid>https://filipe-varela.github.io/warguide.hackerschool.io/code/textview/</guid>
-      <description>&lt;h1 id=&#34;textview&#34;&gt;TextView&lt;/h1&gt;
-&lt;p&gt;View para mostrar texto.
-Usado para os casos como títulos, textos curtos ou longos e para indicar informações.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Main</title>
       <link>https://filipe-varela.github.io/warguide.hackerschool.io/tasks/main/</link>
       <pubDate>Wed, 01 Dec 2021 15:43:42 +0000</pubDate>
@@ -389,16 +286,6 @@ Usado para os casos como títulos, textos curtos ou longos e para indicar inform
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Main</title>
-      <link>https://filipe-varela.github.io/warguide.hackerschool.io/code/main/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://filipe-varela.github.io/warguide.hackerschool.io/code/main/</guid>
-      <description>&lt;p&gt;Ora&lt;/p&gt;
 </description>
     </item>
     
