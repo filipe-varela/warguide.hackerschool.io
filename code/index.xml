@@ -6,10 +6,22 @@
     <description>Guia do Workshop de Android do Recrutamento (Codes)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-pt</language>
-    <lastBuildDate>Wed, 15 Dec 2021 12:36:04 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 18 Dec 2021 02:43:26 +0000</lastBuildDate>
     
     <atom:link href="https://filipe-varela.github.io/warguide.hackerschool.io/code/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Videos</title>
+      <link>https://filipe-varela.github.io/warguide.hackerschool.io/code/videos/</link>
+      <pubDate>Sat, 18 Dec 2021 02:43:26 +0000</pubDate>
+      
+      <guid>https://filipe-varela.github.io/warguide.hackerschool.io/code/videos/</guid>
+      <description>&lt;p&gt;A fim de se poder gravar o ecrã do telemóvel, é necessário abrir o &lt;code&gt;Logcat&lt;/code&gt;, normalmente no friso de baixo e pode ser acedido por &lt;code&gt;Alt+6&lt;/code&gt;.
+Quando aberto o suficiente, é possível ver um sinal de uma câmara vista de lado, será a partir de aí que se poderá gravado o ecrã para uma pasta que se quiser. 
+Um guia mais detalhado &lt;a href=&#34;https://developer.android.com/studio/debug/am-video&#34;&gt;aqui&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Montar uma APK</title>
@@ -17,7 +29,8 @@
       <pubDate>Wed, 15 Dec 2021 12:36:04 +0000</pubDate>
       
       <guid>https://filipe-varela.github.io/warguide.hackerschool.io/code/apk/</guid>
-      <description>&lt;p&gt;Para montar uma APK é preciso em&amp;hellip;&lt;/p&gt;
+      <description>&lt;p&gt;PAra montar uma APK, é preciso ir a &lt;code&gt;Build -&amp;gt; Build Bundle(s) / APK(s) -&amp;gt; Build APK(s)&lt;/code&gt;. Isto irá iniciar um processo que, no final, terá uma mensagem a indicar se pretendemos abrir o ficheiro com o explorador de ficheiros ou analizá-lo.&lt;/p&gt;
+&lt;p&gt;Esta parte será importante para a entrega do projeto dado que assim é possível instalar a aplicação sem ser necessário abrir o Android Studio.&lt;/p&gt;
 </description>
     </item>
     
