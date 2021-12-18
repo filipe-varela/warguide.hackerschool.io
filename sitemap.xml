@@ -2,8 +2,29 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://filipe-varela.github.io/warguide.hackerschool.io/workshop/exemplo_frotend/</loc>
+    <lastmod>2021-12-17T15:32:02+00:00</lastmod>
+  </url><url>
     <loc>https://filipe-varela.github.io/warguide.hackerschool.io/</loc>
-    <lastmod>2021-12-15T14:35:45+00:00</lastmod>
+    <lastmod>2021-12-17T15:32:02+00:00</lastmod>
+  </url><url>
+    <loc>https://filipe-varela.github.io/warguide.hackerschool.io/workshop/</loc>
+    <lastmod>2021-12-17T15:32:02+00:00</lastmod>
+  </url><url>
+    <loc>https://filipe-varela.github.io/warguide.hackerschool.io/workshop/id/</loc>
+    <lastmod>2021-12-17T15:31:34+00:00</lastmod>
+  </url><url>
+    <loc>https://filipe-varela.github.io/warguide.hackerschool.io/workshop/view_viewgroup/</loc>
+    <lastmod>2021-12-17T15:31:29+00:00</lastmod>
+  </url><url>
+    <loc>https://filipe-varela.github.io/warguide.hackerschool.io/workshop/xml/</loc>
+    <lastmod>2021-12-17T15:31:18+00:00</lastmod>
+  </url><url>
+    <loc>https://filipe-varela.github.io/warguide.hackerschool.io/workshop/estrutura/</loc>
+    <lastmod>2021-12-17T15:30:53+00:00</lastmod>
+  </url><url>
+    <loc>https://filipe-varela.github.io/warguide.hackerschool.io/workshop/intro/</loc>
+    <lastmod>2021-12-17T14:55:23+00:00</lastmod>
   </url><url>
     <loc>https://filipe-varela.github.io/warguide.hackerschool.io/tasks/slide/</loc>
     <lastmod>2021-12-15T14:35:45+00:00</lastmod>

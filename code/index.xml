@@ -39,7 +39,7 @@
       
       <guid>https://filipe-varela.github.io/warguide.hackerschool.io/code/textview/</guid>
       <description>&lt;h1 id=&#34;textview&#34;&gt;TextView&lt;/h1&gt;
-&lt;p&gt;View para mostrar texto.
+&lt;p&gt;View para mostrar texto. 
 Usado para os casos como títulos, textos curtos ou longos e para indicar informações.&lt;/p&gt;
 </description>
     </item>
