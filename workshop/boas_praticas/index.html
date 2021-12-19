@@ -10,10 +10,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="no-referrer-when-downgrade">
 
-<title>Workshop de Android - Guia do Workshop de Android do Recrutamento</title>
+<title>Boas Práticas - Guia do Workshop de Android do Recrutamento</title>
 
-<meta name="description" content="Este é a versão escrita do workshop de AppDev feita no dia 16/12/2021. Nesta página é possível verificar as diferentes partes do mesmo em formato escrito e com snippets de código. Entretanto, qualquer material pode ser visto aqui, um repositório que criei com o exemplo final (esperado) do workshop aqui, bem como não esquecer que têm até dia 6 de janeiro de 2022 para entregar!
-Tópicos do workshop O workshop foi estruturado da seguinte forma:">
+<meta name="description" content="É necessário manter as boas práticas dentro da aplicação, pois não só evita futuros problemas com coerência ou colisões de nomenclatura - dentro do backend, por exemplo, umas variáveis são escritas em forma de serpente (nome_de_variavel) enquanto outras são em camelo (nomeDaVariavel). Não só isso, como também ajuda posteriormente na partilha do projeto ou documentação do mesmo. Sendo por isso necessário seguir por estas e outras regras de boas práticas:">
 
 <link rel="icon" type="image/x-icon" href="https://filipe-varela.github.io/warguide.hackerschool.io/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://filipe-varela.github.io/warguide.hackerschool.io/favicon.png">
@@ -41,19 +40,17 @@ Tópicos do workshop O workshop foi estruturado da seguinte forma:">
 
 
 
-<meta property="og:title" content="Workshop de Android" />
-<meta property="og:description" content="Este é a versão escrita do workshop de AppDev feita no dia 16/12/2021. Nesta página é possível verificar as diferentes partes do mesmo em formato escrito e com snippets de código. Entretanto, qualquer material pode ser visto aqui, um repositório que criei com o exemplo final (esperado) do workshop aqui, bem como não esquecer que têm até dia 6 de janeiro de 2022 para entregar!
-Tópicos do workshop O workshop foi estruturado da seguinte forma:" />
+<meta property="og:title" content="Boas Práticas" />
+<meta property="og:description" content="É necessário manter as boas práticas dentro da aplicação, pois não só evita futuros problemas com coerência ou colisões de nomenclatura - dentro do backend, por exemplo, umas variáveis são escritas em forma de serpente (nome_de_variavel) enquanto outras são em camelo (nomeDaVariavel). Não só isso, como também ajuda posteriormente na partilha do projeto ou documentação do mesmo. Sendo por isso necessário seguir por estas e outras regras de boas práticas:" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://filipe-varela.github.io/warguide.hackerschool.io/workshop/intro/" /><meta property="article:section" content="workshop" />
-<meta property="article:published_time" content="2021-12-17T14:55:23+00:00" />
-<meta property="article:modified_time" content="2021-12-17T14:55:23+00:00" />
+<meta property="og:url" content="https://filipe-varela.github.io/warguide.hackerschool.io/workshop/boas_praticas/" /><meta property="article:section" content="workshop" />
+<meta property="article:published_time" content="2021-12-17T15:36:39+00:00" />
+<meta property="article:modified_time" content="2021-12-17T15:36:39+00:00" />
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Workshop de Android"/>
-<meta name="twitter:description" content="Este é a versão escrita do workshop de AppDev feita no dia 16/12/2021. Nesta página é possível verificar as diferentes partes do mesmo em formato escrito e com snippets de código. Entretanto, qualquer material pode ser visto aqui, um repositório que criei com o exemplo final (esperado) do workshop aqui, bem como não esquecer que têm até dia 6 de janeiro de 2022 para entregar!
-Tópicos do workshop O workshop foi estruturado da seguinte forma:"/>
+<meta name="twitter:title" content="Boas Práticas"/>
+<meta name="twitter:description" content="É necessário manter as boas práticas dentro da aplicação, pois não só evita futuros problemas com coerência ou colisões de nomenclatura - dentro do backend, por exemplo, umas variáveis são escritas em forma de serpente (nome_de_variavel) enquanto outras são em camelo (nomeDaVariavel). Não só isso, como também ajuda posteriormente na partilha do projeto ou documentação do mesmo. Sendo por isso necessário seguir por estas e outras regras de boas práticas:"/>
 
 
 
@@ -124,57 +121,23 @@ Tópicos do workshop O workshop foi estruturado da seguinte forma:"/>
 
     <article class="post h-entry">
         <header class="post-header">
-            <h1 class="p-name post-title">Workshop de Android</h1>
+            <h1 class="p-name post-title">Boas Práticas</h1>
 
             
         </header>
         <div class="content e-content">
-            <p>Este é a versão escrita do workshop de AppDev feita no dia 16/12/2021. 
-Nesta página é possível verificar as diferentes partes do mesmo em formato escrito e com <em>snippets</em> de código.
-Entretanto, qualquer material pode ser visto <a href="https://drive.google.com/drive/folders/1CCDfb7o79b6eR-xim18rZ4XgxLRkmvN8?usp=sharing">aqui</a>, um repositório que criei com o exemplo final (esperado) do workshop <a href="">aqui</a>, bem como não esquecer que têm até dia 6 de janeiro de 2022 para entregar!</p>
-<h2 id="tópicos-do-workshop">Tópicos do workshop</h2>
-<p>O workshop foi estruturado da seguinte forma:</p>
-<ol>
-<li>Android Studio
-<ol>
-<li><a href="../estrutura">Estrutura do Android</a></li>
-<li>Frotend
-<ol>
-<li><a href="../xml">XML</a></li>
-<li><a href="../view_viewgroup">View vs ViewGroup</a></li>
-<li><a href="../id">ID&rsquo;s</a></li>
-<li><a href="../exemplo_frotend">Exemplo prático</a></li>
-</ol>
-</li>
-<li>Backend
-<ol>
-<li><a href="../java_kotlin">Java VS Kotlin</a></li>
-<li><a href="../python_kotlin">Python &amp; Kotlin</a></li>
-<li><a href="../kotlin_trivia">Kotlin Trivia</a></li>
-<li><a href="../null_safety">Null Safety</a></li>
-<li><a href="../conexao_frotend_backend">Conexão de Backend com Frotend</a></li>
-<li><a href="../exemplo_backend">Exemplo prático</a></li>
-</ol>
-</li>
-</ol>
-</li>
-<li>Mentalidade de AppDev
-<ol>
-<li>Conceitos vários
-<ol>
-<li><a href="../activity_fragment">Activity vs Fragment</a></li>
-<li><a href="../intent">Intent</a></li>
-<li><a href="../sharedprefs">SharedPreferences</a></li>
-<li><a href="../resources">Resources</a></li>
-<li><a href="../box_model">Box-Model</a></li>
-<li><a href="../utils">Utils</a></li>
-</ol>
-</li>
-<li><a href="../boas_praticas">Boas práticas</a></li>
-</ol>
-</li>
-<li><a href="../../general/enunciado">Enunciado</a></li>
-</ol>
+            <p>É necessário manter as boas práticas dentro da aplicação, pois não só evita futuros problemas com coerência ou colisões de nomenclatura - dentro do backend, por exemplo, umas variáveis são escritas em forma de serpente (<code>nome_de_variavel</code>) enquanto outras são em camelo (<code>nomeDaVariavel</code>).
+Não só isso, como também ajuda posteriormente na partilha do projeto ou documentação do mesmo.
+Sendo por isso necessário seguir por estas e outras regras de <a href="https://github.com/futurice/android-best-practices">boas práticas</a>:</p>
+<ul>
+<li>Usar Resources para valores estáticos</li>
+<li>Usar camelCase para variáveis</li>
+<li>Número máximo de linhas por função: 20</li>
+<li>Comentem o código de forma objetiva e descritiva</li>
+<li>KISS – <em>Keep It Simple and Stupid</em></li>
+<li>Evitem loops descontrolados e desnecessários</li>
+<li>Para um problema, pode haver várias soluções</li>
+</ul>
 
         </div>
         
@@ -185,7 +148,7 @@ Entretanto, qualquer material pode ser visto <a href="https://drive.google.com/d
         <div class="post-date dt-published">2021-12-17</div>
     
 
-    <a class="post-hidden-url u-url" href="https://filipe-varela.github.io/warguide.hackerschool.io/workshop/intro/">https://filipe-varela.github.io/warguide.hackerschool.io/workshop/intro/</a>
+    <a class="post-hidden-url u-url" href="https://filipe-varela.github.io/warguide.hackerschool.io/workshop/boas_praticas/">https://filipe-varela.github.io/warguide.hackerschool.io/workshop/boas_praticas/</a>
     <a href="https://filipe-varela.github.io/warguide.hackerschool.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
 
 
@@ -200,12 +163,12 @@ Entretanto, qualquer material pode ser visto <a href="https://drive.google.com/d
     
         
     <div class="pagination post-pagination">
-        <div class="left pagination-item ">
-            
-                <a href="/warguide.hackerschool.io/workshop/estrutura/">Estrutura do Android Studio</a>
+        <div class="left pagination-item disabled">
             
         </div>
-        <div class="right pagination-item disabled">
+        <div class="right pagination-item ">
+            
+                <a href="/warguide.hackerschool.io/workshop/utils/">Utils</a>
             
         </div>
     </div>

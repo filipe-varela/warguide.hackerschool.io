@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+
+
+<html lang="pt-pt" data-theme="">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>Activity VS Fragment - Guia do Workshop de Android do Recrutamento</title>
+
+<meta name="description" content="Esta página é um pouco extensa, recomendo irem com calma
+ No android, cada página pode ser vista como uma atividade ou como um fragmento:
+ Activity: An activity is a single, focused thing that the user can do. Almost all activities interact with the user, so the Activity class takes care of creating a window for you in which you can place your UI with setContentView(View)
+  Fragment: A Fragment represents a reusable portion of your app&rsquo;s UI.">
+
+<link rel="icon" type="image/x-icon" href="https://filipe-varela.github.io/warguide.hackerschool.io/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://filipe-varela.github.io/warguide.hackerschool.io/favicon.png">
+
+
+
+    
+
+
+
+
+
+    
+    
+        
+    
+    
+
+    
+        <link rel="stylesheet" href="https://filipe-varela.github.io/warguide.hackerschool.io/css/style.min.733c52c242cfa5efc8b1998400214f55799b9b9d5b3e8bad9ee69908d14cabfd.css" integrity="sha256-czxSwkLPpe/IsZmEACFPVXmbm51bPoutnuaZCNFMq/0=">
+    
+
+
+
+
+
+
+<meta property="og:title" content="Activity VS Fragment" />
+<meta property="og:description" content="Esta página é um pouco extensa, recomendo irem com calma
+ No android, cada página pode ser vista como uma atividade ou como um fragmento:
+ Activity: An activity is a single, focused thing that the user can do. Almost all activities interact with the user, so the Activity class takes care of creating a window for you in which you can place your UI with setContentView(View)
+  Fragment: A Fragment represents a reusable portion of your app&rsquo;s UI." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://filipe-varela.github.io/warguide.hackerschool.io/workshop/activity_fragment/" /><meta property="article:section" content="workshop" />
+<meta property="article:published_time" content="2021-12-17T15:35:43+00:00" />
+<meta property="article:modified_time" content="2021-12-17T15:35:43+00:00" />
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Activity VS Fragment"/>
+<meta name="twitter:description" content="Esta página é um pouco extensa, recomendo irem com calma
+ No android, cada página pode ser vista como uma atividade ou como um fragmento:
+ Activity: An activity is a single, focused thing that the user can do. Almost all activities interact with the user, so the Activity class takes care of creating a window for you in which you can place your UI with setContentView(View)
+  Fragment: A Fragment represents a reusable portion of your app&rsquo;s UI."/>
+
+
+
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header class="common-header"> 
+            
+                <div class="header-top">
+    <h1 class="site-title">
+        <a href="/warguide.hackerschool.io">Guia do Workshop de Android do Recrutamento</a>
+    </h1>
+    <ul class="social-icons">
+
+
+    
+        
+        
+        <li>
+            <a href="https://github.com/filipe-varela" title="Github" rel="me">
+            <span class="inline-svg" >
+
+
+
+
+    
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+
+</span>
+
+            </a>
+        </li>
+    
+
+</ul>
+
+</div>
+
+    <nav>
+        
+        
+        <a class="" href="https://filipe-varela.github.io/warguide.hackerschool.io/general/enunciado/" title="">Enunciado</a>
+        
+        <a class="" href="https://filipe-varela.github.io/warguide.hackerschool.io/tasks/main" title="">Tarefas</a>
+        
+        <a class="" href="https://filipe-varela.github.io/warguide.hackerschool.io/workshop/intro" title="">Workshop</a>
+        
+    </nav>
+
+
+
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+    
+
+    <article class="post h-entry">
+        <header class="post-header">
+            <h1 class="p-name post-title">Activity VS Fragment</h1>
+
+            
+        </header>
+        <div class="content e-content">
+            <blockquote>
+<p>Esta página é um pouco extensa, recomendo irem com calma</p>
+</blockquote>
+<p>No android, cada página pode ser vista como uma atividade ou como um fragmento:</p>
+<blockquote>
+<p><strong>Activity:</strong> <em>An activity is a single, focused thing that the user can do. Almost all activities interact with the user, so the Activity class takes care of creating a window for you in which you can place your UI with setContentView(View)</em></p>
+</blockquote>
+<blockquote>
+<p><strong>Fragment:</strong> <em>A Fragment represents a reusable portion of your app&rsquo;s UI. A fragment defines and manages its own layout, has its own lifecycle, and can handle its own input events. Fragments cannot live on their own&ndash;they must be hosted by an activity or another fragment. The fragment’s view hierarchy becomes part of, or attaches to, the host’s view hierarchy.</em></p>
+</blockquote>
+<p>Podendo ajudar a analogia de uma atividade ser um caderno para uma cadeira.
+Vai-se gastar mais recursos em manter e comprar mais cadernos, mas consegue-se fazer todo o que se pretende nele.
+Contudo, se se utilizar e reutilizar as folhas que o mesmo contem para as mais várias cadeiras, então poupa-se recursos e talvez utilizar a mesma folha para várias ocasiões ou até reutilizar uma já usada.
+A relação entre atividade e fragmento é o mesmo, onde atividades são mais poderosas, mas gastam mais recursos, enquanto fragmentos são mais leves e conseguem ser reutilizados para outras ocasiões.
+Até se pode ter múltiplas janelas na aplicação e todas elas são geradas a partir do mesmo fragmento, mas em instâncias diferentes.
+Ver <a href="../../tasks/slide">Slide de Apresentação</a> como exemplo/tarefa.</p>
+<h3 id="lifecycle">LifeCycle</h3>
+<p>Tanto a atividade como o fragmento têm os seus ciclos de vida, sendo que no backend se fez mais num dos passos do ciclo de vida da atividade.
+É importante ter uma noção de a atividade passa por estas fases, pelo simples facto de ser necessário registar certos <em>Listeners</em> ou funções internas que estejam dependentes da atividade ou fragmento, isto é, só está ativo se estes estiverem ativos e desativado quando estes estiverem desativados da mesma forma.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Ciclo da Atividade</th>
+<th style="text-align:center">Ciclo do Fragmento</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><img src="../images/atividade_ciclo.png" alt=""></td>
+<td style="text-align:center"><img src="../images/fragmento_ciclo.png" alt=""></td>
+</tr>
+</tbody>
+</table>
+<h1 id="atividade">Atividade</h1>
+<h2 id="implementação">Implementação</h2>
+<p>Imagine-se que se implementa mais um botão no menu do backend, debaixo do anterior, para poder ativar uma atividade:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;!-- RelativeLayout --&gt;</span>
+
+<span style="color:#f92672">&lt;Button</span>
+    <span style="color:#a6e22e">android:id=</span><span style="color:#e6db74">&#34;@+id/btn_atividade&#34;</span>
+    <span style="color:#a6e22e">android:layout_width=</span><span style="color:#e6db74">&#34;wrap_content&#34;</span>
+    <span style="color:#a6e22e">android:layout_height=</span><span style="color:#e6db74">&#34;wrap_content&#34;</span>
+    <span style="color:#a6e22e">android:text=</span><span style="color:#e6db74">&#34;Click me!&#34;</span>
+    <span style="color:#a6e22e">android:layout_centerHorizontal=</span><span style="color:#e6db74">&#34;true&#34;</span>
+    <span style="color:#a6e22e">android:layout_below=</span><span style="color:#e6db74">&#34;@+id/txt_menu&#34;</span>
+    <span style="color:#f92672">/&gt;</span>
+
+<span style="color:#75715e">&lt;!-- RelativeLayout --&gt;</span>
+</code></pre></div><p>Com este, tem-se que a sua implementação fique da seguinte maneira no backend (ter atenção para ver do <a href="../intent">Intent</a> para poder prosseguir com este exemplo):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#75715e">// No onCreate
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">val</span> btnAtividade : Button = findViewById(R.id.btn_atividade)
+
+btnAtividade.sestOnClickListener {
+    <span style="color:#75715e">// Usando o intent para ativar a nova atividade
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">val</span> intent = Intent(<span style="color:#66d9ef">this</span>, SegundaAtividade<span style="color:#f92672">::</span><span style="color:#66d9ef">class</span>.java)
+    startActivity(intent)
+}
+</code></pre></div><p>O que este pedaço de código faz é simplesmente começar uma nova atividade, sendo a mesma chamada <code>SegundaAtividade</code>.</p>
+<p>Ora, isto em principio daria erro, pois esta atividade não existe.
+Sendo por isso necessário criar os ficheiros necessários para essa mesma nova atividade</p>
+<h2 id="adicionar-atividades">Adicionar atividades</h2>
+<p>Para adicionar uma atividade, tem-se, como uma das vias, usar a palete de comandos com carregar no <code>Shift</code> duas vezes rapidamente. 
+Daí, escreve-se <code>New</code> e carrega-se em:</p>
+<p><img src="../images/new.png" alt="New"></p>
+<p>De seguida, escolhe-se a opção <code>Empty Activity</code> como ilustra a imagem:</p>
+<p><img src="../images/empty.png" alt="Empty"></p>
+<p>Aparecerá um <em>prompt</em> e daí se escreve o nome de <em>SegundaAtividade</em>.
+Carregando em <em>Finish</em>, ter-se-á criada a nova atividade e, consequentemente, poder-se-á correr a aplicação, carregar no botão e a mesma irá mostrar a nova atividade!</p>
+<h1 id="fragmento">Fragmento</h1>
+<h2 id="implementação-1">Implementação</h2>
+<p>Para a sua implementação, este processo é mais manual, sendo necessário neste caso gerar um ficheiro para o backend, <code>.kt</code>, e para o frotend, <code>.xml</code>.
+Para tal, abra-se a aba do projeto e carrega-se com o botão de lado direito na pasta que tem ambas atividades no backend e gera-se um novo ficheiro/class para o fragmento - <code>Fragmento.kt</code>.
+Repete-se este processo para a pasta dos <em>resources</em> ou <em>res</em>, mais nomeadamente carregar com o botão do lado direito do rato na pasta dos <em>layout</em> e criar um <em>Layout Resource file</em> - <code>fragment_fragmento.xml</code>.</p>
+<p><img src="../images/fragmento_estrutura.png" alt="Fragmento Estrutura"></p>
+<p>Agora com as bases feitas, só se precisa de ir, na imagem anterior, a <code>Gradle Scripts -&gt; build.gradle (Module: ...)</code> e acrescentar esta linha dentro das <code>dependencies</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gradle" data-lang="gradle">implementation <span style="color:#e6db74">&#39;androidx.fragment:fragment-ktx:1.4.0&#39;</span>
+</code></pre></div><p>E ter de dar <em>Sync Now</em> ao projeto, num friso azul que esteja em cima.</p>
+<p>Pondo isto, agora tem-se o necessário para chamar o fragmento.</p>
+<h2 id="chamar-o-fragmento">Chamar o fragmento</h2>
+<p>Para se poder adicionar o fragmento na atividade, tem-se de alterar o layout de <code>ConstrainLayout</code> para relative no <code>activity_segunda_atividade.xml</code> acrescentar o seguinte:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;androidx.fragment.app.FragmentContainerView</span>
+    <span style="color:#a6e22e">android:id=</span><span style="color:#e6db74">&#34;@+id/container_fragment&#34;</span>
+    <span style="color:#a6e22e">android:layout_width=</span><span style="color:#e6db74">&#34;match_parent&#34;</span>
+    <span style="color:#a6e22e">android:layout_height=</span><span style="color:#e6db74">&#34;wrap_content&#34;</span>
+    <span style="color:#a6e22e">android:layout_alignParentTop=</span><span style="color:#e6db74">&#34;true&#34;</span>
+    <span style="color:#a6e22e">android:layout_above=</span><span style="color:#e6db74">&#34;@id/txt_atividade&#34;</span>
+    <span style="color:#f92672">/&gt;</span>
+
+<span style="color:#f92672">&lt;TextView</span>
+    <span style="color:#a6e22e">android:id=</span><span style="color:#e6db74">&#34;@+id/txt_atividade&#34;</span>
+    <span style="color:#a6e22e">android:layout_width=</span><span style="color:#e6db74">&#34;match_parent&#34;</span>
+    <span style="color:#a6e22e">android:layout_height=</span><span style="color:#e6db74">&#34;wrap_content&#34;</span>
+    <span style="color:#a6e22e">android:text=</span><span style="color:#e6db74">&#34;Isto é a atividade&#34;</span>
+    <span style="color:#a6e22e">android:textAlignment=</span><span style="color:#e6db74">&#34;center&#34;</span>
+    <span style="color:#a6e22e">android:layout_alignParentBottom=</span><span style="color:#e6db74">&#34;true&#34;</span>
+    <span style="color:#f92672">/&gt;</span>
+</code></pre></div><p>No <code>SegundaAtividade.kt</code>, acrescenta-se o seguinte dentro de <code>onCreate</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin">supportFragmentManager.commit {
+    add&lt;Fragmento&gt;(R.id.container_fragment)
+}
+</code></pre></div><p>Em principio, ter-se-á erros no <code>commit</code> e no <code>add</code>.
+Para resolver os mesmos, tem-se que dar import no primeiro - carregar <code>Alt+Enter</code> com o cursos em cima do <code>commit</code> - e no segundo tem-se que criar o fragmento internamente.
+Para tal e para se poder acrescentar algum elemento e interagir com o fragmento da mesma maneira que a atividade, tem-se no <code>Fragmento.kt</code> que converter o mesmo para:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#66d9ef">import</span> android.os.Bundle
+<span style="color:#66d9ef">import</span> android.view.View
+<span style="color:#66d9ef">import</span> androidx.fragment.app.Fragment
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Fragmento</span> : Fragment(R.layout.fragment_fragmento) {
+
+    <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">onViewCreated</span>(view: View, savedInstanceState: Bundle?) {
+        <span style="color:#66d9ef">super</span>.onViewCreated(view, savedInstanceState)
+        <span style="color:#75715e">/**
+</span><span style="color:#75715e">         * O onViewCreated age de forma semelhante que o onCreate,
+</span><span style="color:#75715e">         * precisando neste caso acrescentar o *view* antes do
+</span><span style="color:#75715e">         * findViewById.
+</span><span style="color:#75715e">         * 
+</span><span style="color:#75715e">         * Ex.:
+</span><span style="color:#75715e">         * val btnView : Button = view.findViewById(R.id.btn_fragmento)
+</span><span style="color:#75715e">         * 
+</span><span style="color:#75715e">         * Teria de haver um botão no fragment_fragmento.xml para este
+</span><span style="color:#75715e">         * pedaço de código ter efeito sem erros
+</span><span style="color:#75715e">         */</span>
+    }
+    
+}
+</code></pre></div><p>Agora, o <code>add</code> da atividade que se estava a mexer anteriormente apresenta um erro que se resolve com um <em>import</em> do mesmo modo que o <code>commit</code>.</p>
+<hr>
+<p>Com isto tudo, tem-se uma atividade e um fragmento acrescentados e se se correr a aplicação, tem-se que tudo corre perfeitamente.
+Agora, fica como desafio acrescentar outros elementos no <code>fragment_fragmento.xml</code> para se poder interagir com o fragmento como fora feito com a atividade.</p>
+<p>Exemplo: criar um botão e um objeto <code>&lt;View/&gt;</code> no layout a fim do botão criar cores aleatórias. Baseado neste <a href="">exemplo</a>. (colocar o exemplo no repositório).</p>
+
+        </div>
+        
+
+
+<div class="post-info">
+    
+        <div class="post-date dt-published">2021-12-17</div>
+    
+
+    <a class="post-hidden-url u-url" href="https://filipe-varela.github.io/warguide.hackerschool.io/workshop/activity_fragment/">https://filipe-varela.github.io/warguide.hackerschool.io/workshop/activity_fragment/</a>
+    <a href="https://filipe-varela.github.io/warguide.hackerschool.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
+
+
+    <div class="post-taxonomies">
+        
+            
+    </div>
+</div>
+
+    </article>
+
+    
+        
+    <div class="pagination post-pagination">
+        <div class="left pagination-item ">
+            
+                <a href="/warguide.hackerschool.io/workshop/intent/">Intent</a>
+            
+        </div>
+        <div class="right pagination-item ">
+            
+                <a href="/warguide.hackerschool.io/workshop/exemplo_backend/">Exemplo do Backend</a>
+            
+        </div>
+    </div>
+
+
+
+
+    
+
+    
+
+    
+
+
+        </main>
+        
+            <footer class="common-footer">
+    
+    
+
+    <div class="common-footer-bottom">
+        
+        <div class="copyright">
+            <p>© 2021<br>
+            Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.<br>
+            
+            </p>  
+        </div> 
+
+        
+
+    
+
+
+
+    <button class="theme-switcher">
+        Dark theme
+    </button>
+
+    <script>
+    const STORAGE_KEY = 'user-color-scheme'
+    const defaultTheme = "auto"
+
+    let currentTheme
+    let switchButton
+    let autoDefinedScheme = window.matchMedia('(prefers-color-scheme: dark)')
+
+    const autoChangeScheme = e => {
+        currentTheme = e.matches ? 'dark' : 'light'
+        document.documentElement.setAttribute('data-theme', currentTheme)
+        changeButtonText()
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        switchButton = document.querySelector('.theme-switcher')
+        currentTheme = detectCurrentScheme()
+        if (currentTheme == 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark')
+        }
+        if (currentTheme == 'auto') {
+            autoChangeScheme(autoDefinedScheme);
+            autoDefinedScheme.addListener(autoChangeScheme);
+        }
+        changeButtonText()
+        switchButton.addEventListener('click', switchTheme, false)
+    })
+
+    function detectCurrentScheme() {
+        if (localStorage.getItem(STORAGE_KEY)) {
+            return localStorage.getItem(STORAGE_KEY)
+        } 
+        if (defaultTheme) {
+            return defaultTheme
+        } 
+        if (!window.matchMedia) {
+            return 'light'
+        } 
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            return 'dark'
+        }
+        return 'light'
+    }
+
+    function changeButtonText()
+    {   
+        switchButton.textContent = currentTheme == 'dark' ?  "Light theme" : "Dark theme"
+    }
+
+    function switchTheme(e) {
+        if (currentTheme == 'dark') {
+            localStorage.setItem(STORAGE_KEY, 'light')
+            document.documentElement.setAttribute('data-theme', 'light')
+            currentTheme = 'light'
+        } else {
+            localStorage.setItem(STORAGE_KEY, 'dark')
+            document.documentElement.setAttribute('data-theme', 'dark')
+            currentTheme = 'dark'
+        }
+        changeButtonText()
+    }
+    </script>
+   
+    </div>
+
+    <p class="h-card vcard">
+
+    <a href=https://filipe-varela.github.io/warguide.hackerschool.io/ class="p-name u-url url fn" rel="me"></a> 
+
+    
+
+    
+</p> 
+</footer>
+
+        
+    </div>
+</body>
+</html>

@@ -6,10 +6,407 @@
     <description>Guia do Workshop de Android do Recrutamento (Workshops)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-pt</language>
-    <lastBuildDate>Fri, 17 Dec 2021 15:35:30 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 17 Dec 2021 15:36:39 +0000</lastBuildDate>
     
     <atom:link href="https://filipe-varela.github.io/warguide.hackerschool.io/workshop/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Boas Práticas</title>
+      <link>https://filipe-varela.github.io/warguide.hackerschool.io/workshop/boas_praticas/</link>
+      <pubDate>Fri, 17 Dec 2021 15:36:39 +0000</pubDate>
+      
+      <guid>https://filipe-varela.github.io/warguide.hackerschool.io/workshop/boas_praticas/</guid>
+      <description>&lt;p&gt;É necessário manter as boas práticas dentro da aplicação, pois não só evita futuros problemas com coerência ou colisões de nomenclatura - dentro do backend, por exemplo, umas variáveis são escritas em forma de serpente (&lt;code&gt;nome_de_variavel&lt;/code&gt;) enquanto outras são em camelo (&lt;code&gt;nomeDaVariavel&lt;/code&gt;).
+Não só isso, como também ajuda posteriormente na partilha do projeto ou documentação do mesmo.
+Sendo por isso necessário seguir por estas e outras regras de &lt;a href=&#34;https://github.com/futurice/android-best-practices&#34;&gt;boas práticas&lt;/a&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Usar Resources para valores estáticos&lt;/li&gt;
+&lt;li&gt;Usar camelCase para variáveis&lt;/li&gt;
+&lt;li&gt;Número máximo de linhas por função: 20&lt;/li&gt;
+&lt;li&gt;Comentem o código de forma objetiva e descritiva&lt;/li&gt;
+&lt;li&gt;KISS – &lt;em&gt;Keep It Simple and Stupid&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;Evitem loops descontrolados e desnecessários&lt;/li&gt;
+&lt;li&gt;Para um problema, pode haver várias soluções&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Utils</title>
+      <link>https://filipe-varela.github.io/warguide.hackerschool.io/workshop/utils/</link>
+      <pubDate>Fri, 17 Dec 2021 15:36:12 +0000</pubDate>
+      
+      <guid>https://filipe-varela.github.io/warguide.hackerschool.io/workshop/utils/</guid>
+      <description>&lt;p&gt;Por vezes é útil criar um ficheiro com ferramentas usadas ao longo do projeto e/ou que não tenha relacionamento com as outras funcionalidades que se esteja a desenvolver.
+Para tal, é útil utilizar o ficheiro &lt;code&gt;Utils.kt&lt;/code&gt;, que se gera e normalmente fica ou numa pasta própria ou na pasta global e pode ter como exemplo o seguinte:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-kotlin&#34; data-lang=&#34;kotlin&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Utils&lt;/span&gt; {
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;companion&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;object&lt;/span&gt; {
+        &lt;span style=&#34;color:#75715e&#34;&gt;/**
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;        * As variáveis daqui podem ser chamadas
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;        * onde quiserem, usando apenas o comando
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;        * Utils.&amp;lt;nome da variavel&amp;gt;.
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;        *
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;        * Isto funciona com métodos mesmo assim,
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;        * do mesmo modo que as variáveis:
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;        * Utils.&amp;lt;nome do método&amp;gt;()
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;        */&lt;/span&gt;
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;val&lt;/span&gt; a = &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;fun&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;soma&lt;/span&gt;(val1:Int, val2:Int) : Int {
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; val1 + val2
+        }    
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Este ficheiro usa o conceito de &lt;code&gt;companion object&lt;/code&gt;, parecido a &lt;code&gt;static&lt;/code&gt; em JAVA e o que permite este modificador é aquilo que se encontra comentado no bloco de código anterior.
+Desta maneira, não é preciso criar uma instância de &lt;code&gt;Utils&lt;/code&gt; nem é preciso estar a reescrever o mesmo código várias vezes.
+Não confundir com o &lt;a href=&#34;../resources&#34;&gt;Resources&lt;/a&gt;, sendo que estes, apesar de serem estáticos, devem ser usados para chaves de &lt;a href=&#34;../sharedprefs&#34;&gt;shared preferences&lt;/a&gt; ou para organizar o layout, entre outras funcionalidades.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Box Model</title>
+      <link>https://filipe-varela.github.io/warguide.hackerschool.io/workshop/box_model/</link>
+      <pubDate>Fri, 17 Dec 2021 15:36:08 +0000</pubDate>
+      
+      <guid>https://filipe-varela.github.io/warguide.hackerschool.io/workshop/box_model/</guid>
+      <description>&lt;p&gt;Quando se dimensiona &lt;em&gt;layout&lt;/em&gt;&amp;rsquo;s, tem-se que ter noção do &lt;a href=&#34;https://en.wikipedia.org/wiki/CSS_box_model&#34;&gt;Box Model&lt;/a&gt;, um conceito proveniente de CSS e tem como objetivo ter zonas dum objeto que podem mudar de grossura, fazendo caixas com os limites grossos ou finos, juntos ou afastados do conteúdo ou fazer com que um objeto esteja próximo ou afastado de um outro objeto.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../images/box_model.png&#34; alt=&#34;Box_Model&#34;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Content:&lt;/strong&gt; Onde estará o conteúdo do objeto, podendo ser uma imagem ou texto&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Padding:&lt;/strong&gt; Espaçamento entre o conteúdo e a fronteira&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Border:&lt;/strong&gt; A espessura da fronteira ou do limite à volta do conteúdo&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Margin:&lt;/strong&gt; Espaçamento entre a fronteira de outros elementos do UI. Este pode &amp;ldquo;colidir&amp;rdquo; com outras margens, proporcionando um afastamento ainda maior entre elementos&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Um exemplo pode ser o de afastar o botão do texto no &lt;a href=&#34;../exemplo_frotend&#34;&gt;exemplo&lt;/a&gt; prático do frotend feito anteriormente:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;TextView&lt;/span&gt;
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;android:id=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;@+id/txt_view&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;android:layout_width=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;wrap_content&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;android:layout_height=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;wrap_content&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;android:text=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;@string/app_name&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;android:layout_centerInParent=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;true&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;android:layout_marginBottom=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;12dp&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#f92672&#34;&gt;/&amp;gt;&lt;/span&gt;
+
+&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;Button&lt;/span&gt;
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;android:layout_width=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;wrap_content&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;android:layout_height=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;wrap_content&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;android:text=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Click me!&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;android:layout_centerHorizontal=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;true&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;android:layout_below=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;@id/txt_view&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#f92672&#34;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>Resources</title>
+      <link>https://filipe-varela.github.io/warguide.hackerschool.io/workshop/resources/</link>
+      <pubDate>Fri, 17 Dec 2021 15:36:01 +0000</pubDate>
+      
+      <guid>https://filipe-varela.github.io/warguide.hackerschool.io/workshop/resources/</guid>
+      <description>&lt;p&gt;Dentro da aplicação pode haver &lt;a href=&#34;https://developer.android.com/guide/topics/resources/providing-resources&#34;&gt;elementos&lt;/a&gt; que sejam constantes durante a sua utilização, tanto para dimensões, esquemas ou até textos que podem ser usados para serem internacionalizados posteriormente.
+Para isto, o Android permite armazenamento de &lt;em&gt;Resources&lt;/em&gt; dentro do mesmo, localizando-se como a superpasta dos layouts &lt;code&gt;res&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../images/resources_exemplo.png&#34; alt=&#34;Resources Exemplo&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Aqui só se encontram ficheiros de formato &lt;code&gt;.xml&lt;/code&gt;, visto na secção de &lt;a href=&#34;../xml&#34;&gt;frotend&lt;/a&gt;, mas com uma particularidade:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;resources&amp;gt;&lt;/span&gt;
+    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;tipo&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;name=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;nome_do_recurso&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;valor&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/tipo&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/resources&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;resvaluestrings&#34;&gt;res/value/strings&lt;/h3&gt;
+&lt;p&gt;Aqui se pode colocar os textos estáticos da aplicação, onde até se mais tarde se podem internacionalizar a partir deste ficheiro.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;resources&amp;gt;&lt;/span&gt;
+    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;string&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;name=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;app_name&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;Titulo da App&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/string&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/resources&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;E podem ser usados nas propriedades de &lt;code&gt;text&lt;/code&gt; das tags no layout, como por exemplo&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;TextView&lt;/span&gt;
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;android:id=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;@+id/txt_view&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;android:layout_width=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;wrap_content&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;android:layout_height=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;wrap_content&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;android:text=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;@string/app_name&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;android:layout_centerInParent=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;true&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#f92672&#34;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;Recomendado usar este formato/procedimento aquando se tem texto no layout que não altere enquanto o utilizador mexe na aplicação&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;resvaluecolors&#34;&gt;res/value/colors&lt;/h3&gt;
+&lt;p&gt;Este formato pode se aplicado para o &lt;code&gt;res/values/colors&lt;/code&gt;, sendo que o que altera é o valor inserido e o tipo de &lt;em&gt;resource&lt;/em&gt; que se esteja a lidar:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;resources&amp;gt;&lt;/span&gt;
+    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;color&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;name=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;purple_200&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;#FFBB86FC&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/color&amp;gt;&lt;/span&gt;
+    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;color&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;name=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;purple_500&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;#FF6200EE&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/color&amp;gt;&lt;/span&gt;
+    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;color&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;name=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;purple_700&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;#FF3700B3&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/color&amp;gt;&lt;/span&gt;
+    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;color&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;name=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;teal_200&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;#FF03DAC5&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/color&amp;gt;&lt;/span&gt;
+    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;color&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;name=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;teal_700&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;#FF018786&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/color&amp;gt;&lt;/span&gt;
+    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;color&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;name=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;black&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;#FF000000&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/color&amp;gt;&lt;/span&gt;
+    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;color&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;name=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;white&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;#FFFFFFFF&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/color&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/resources&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;A sua aplicação pode ser aplicada em vários locais ao longo da UI ou até como recurso no background.
+Um dos exemplos no UI pode ser o seguinte acréscimo de &lt;code&gt;background&lt;/code&gt; no &lt;code&gt;TextView&lt;/code&gt; anterior:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;TextView&lt;/span&gt;
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;android:id=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;@+id/txt_view&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;android:layout_width=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;wrap_content&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;android:layout_height=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;wrap_content&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;android:text=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;@string/app_name&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;android:layout_centerInParent=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;true&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;android:background=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;@color/teal_200&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#f92672&#34;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;resvaluedimen&#34;&gt;res/value/dimen&lt;/h3&gt;
+&lt;p&gt;Este ficheiro em principio não existe na criação do projeto, mas é essencial para manter a concordância entre tamanhos e espaçamentos do UI, tal como haver concordância das cores ou texto.
+A sua formatação é a seguinte:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;resources&amp;gt;&lt;/span&gt;
+    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;dimen&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;name=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;textFont&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;12sp&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/dimen&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/resources&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Sendo posteriormente aplicado da mesma maneira que nos outros tópicos, sendo neste caso usado como &lt;code&gt;textSize&lt;/code&gt; no &lt;code&gt;TextView&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;TextView&lt;/span&gt;
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;android:id=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;@+id/txt_view&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;android:layout_width=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;wrap_content&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;android:layout_height=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;wrap_content&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;android:text=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;@string/app_name&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;android:layout_centerInParent=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;true&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;android:background=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;@color/teal_200&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;android:textSize=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;@dimen/textFont&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#f92672&#34;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;unidades&#34;&gt;Unidades&lt;/h4&gt;
+&lt;p&gt;Ainda neste tópico é importante ter noção nas &lt;a href=&#34;https://developer.android.com/guide/topics/resources/more-resources#Dimension&#34;&gt;dimensões&lt;/a&gt; que se use, sendo neste caso importante notar que:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;dp:&lt;/strong&gt; Uma unidade usada para definir o espaçamento ou tamanho entre elementos no ecrã independentemente da densidade de pixeis que se tenha.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;sp:&lt;/strong&gt; Uma unidade usada para definir a fonte do texto, sendo que é de certo modo semelhante ao &lt;code&gt;dp&lt;/code&gt;, mas adapta-se ao tamanho de fonte do dispositivo&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;É importante saber que unidade usar para cada caso e evitar maus usos.&lt;/p&gt;
+&lt;h2 id=&#34;uso-no-backend&#34;&gt;Uso no backend&lt;/h2&gt;
+&lt;p&gt;Para se poder usar os resources no backend é através da variável &lt;code&gt;resources&lt;/code&gt; que normalmente vem com a atividade, ou seja, pode-se fazer:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-kotlin&#34; data-lang=&#34;kotlin&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; nomeApp = resources.getString(R.string.app_name)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Sendo que é possível obter outros valores estáticos de recursos a partir desta variável.
+Para o caso de, ao longo do desenvolvimento, não se conseguir aceder à variável resources, deve-se usar o &lt;code&gt;context&lt;/code&gt; atual do código - ver mais informação &lt;a href=&#34;https://developer.android.com/reference/kotlin/android/content/res/Resources&#34;&gt;aqui&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>SharedPreferences</title>
+      <link>https://filipe-varela.github.io/warguide.hackerschool.io/workshop/sharedprefs/</link>
+      <pubDate>Fri, 17 Dec 2021 15:35:55 +0000</pubDate>
+      
+      <guid>https://filipe-varela.github.io/warguide.hackerschool.io/workshop/sharedprefs/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;SharedPreferences:&lt;/strong&gt; Interface for accessing and modifying preference data returned by Context.getSharedPreferences(String, int). (…) Modifications to the preferences must go through an Editor object to ensure the preference values remain in a consistent state and control when they are committed to storage.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;As &lt;code&gt;SharedPreferences&lt;/code&gt; servem para guardar e restaurar valores dentro do armazenamento alocado para a aplicação, sendo esses valores os primitivos discutidos na &lt;a href=&#34;../kotlin_trivia&#34;&gt;trivia de Kotlin&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Para se poder usar, tem-se que inicializar uma variável que represente um dos blocos de dados que poderemos usar.
+Criando um caso não exista, no processo, e caracterizado por uma String única do próprio, por isso, tem de ser constante e deveria ser diferente ao mostrado:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-kotlin&#34; data-lang=&#34;kotlin&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;override&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;fun&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;onCreate&lt;/span&gt;(savedInstanceState: Bundle?) {
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;super&lt;/span&gt;.onCreate(savedInstanceState)
+    setContentView(R.layout.activity_main)
+    &lt;span style=&#34;color:#75715e&#34;&gt;// Criar o sharedpreferences, pode ser necessário importar o Context
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;val&lt;/span&gt; sharedPrefs = getSharedPreferences(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;CONSTANT_KEY&amp;#34;&lt;/span&gt;, Context.MODE_PRIVATE)
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Sendo que poderemos obter os dados deste bloco a partir do método &lt;code&gt;.get&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-kotlin&#34; data-lang=&#34;kotlin&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; textoGuardado = sharedPrefs.getString(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;chave&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;default&amp;#34;&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Sendo que precisa de uma chave única, específica e constante para o dado que se esteja a restaurar e de um valor defeito ou &lt;em&gt;default&lt;/em&gt; caso não exista previamente.&lt;/p&gt;
+&lt;h3 id=&#34;editar&#34;&gt;Editar&lt;/h3&gt;
+&lt;p&gt;Para editar os valores, é preciso chamar o editor e posteriormente dar apply do valor.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-kotlin&#34; data-lang=&#34;kotlin&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;val&lt;/span&gt; editor = sharedPrefs.edit()
+editor.putString(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;chave&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;outro valor&amp;#34;&lt;/span&gt;)
+editor.apply()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Neste caso se chama o editor para alterar qualquer que seja o valor que estivesse alocado para a chave &lt;code&gt;&amp;quot;chave&amp;quot;&lt;/code&gt; por &lt;code&gt;&amp;quot;outro valor&amp;quot;&lt;/code&gt;.
+O &lt;code&gt;apply&lt;/code&gt; indica ao programa para salvar as alterações o mais cedo possível, a fim de evitar qualquer problema na sincronização com outros processos que estejam a correr no background.&lt;/p&gt;
+&lt;h3 id=&#34;exemplo&#34;&gt;Exemplo&lt;/h3&gt;
+&lt;p&gt;Neste exemplo, tem-se que ao carregar num botão, o texto é alterado e ao mesmo tempo guardado com um valor incrementado. 
+Ao mesmo tempo, quando se inicia a atividade, o texto é restaurado da sessão anterior:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-kotlin&#34; data-lang=&#34;kotlin&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// Chaves para serem usadas no SharedPreferences
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;val&lt;/span&gt; chaveShared = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;CONSTANT_KEY&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;val&lt;/span&gt; chaveInteiro = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;inteiro&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;val&lt;/span&gt; chaveTexto = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;texto&amp;#34;&lt;/span&gt;
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;override&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;fun&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;onCreate&lt;/span&gt;(savedInstanceState: Bundle?) {
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;super&lt;/span&gt;.onCreate(savedInstanceState)
+    setContentView(R.layout.activity_main)
+
+    &lt;span style=&#34;color:#75715e&#34;&gt;// Iniciar sharedprefs
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;val&lt;/span&gt; sharedPrefs = getSharedPreferences(
+        chaveShared, 
+        Context.MODE_PRIVATE
+    )
+
+    &lt;span style=&#34;color:#75715e&#34;&gt;// Iniciar a view, restaurando a sessão anterior
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;val&lt;/span&gt; txtView : TextView = findViewById(R.id.txt_view)
+    txtView.text = sharedPrefs.getString(chaveTexto, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Carregado 0 vezes&amp;#34;&lt;/span&gt;)
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;val&lt;/span&gt; btnView : Button = findViewById(R.id.btn_view)
+
+    &lt;span style=&#34;color:#75715e&#34;&gt;// Quando se carrega no botão, é incrementado o valor guardado,
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;// mostrado no txtView e guardado no sharedPrefs
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    btnView.setOnClickListener {
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; inteiro = sharedPrefs.getInt(chaveInteiro, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;)
+
+        inteiro &lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+
+        txtView.text = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Carregado &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;$inteiro&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt; vezes&amp;#34;&lt;/span&gt;
+
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;val&lt;/span&gt; editor = sharedPrefs.edit()
+        editor.putString(chaveTexto, txtView.text.toString())
+        editor.putInt(chaveInteiro, inteiro)
+        editor.apply()
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>Intent</title>
+      <link>https://filipe-varela.github.io/warguide.hackerschool.io/workshop/intent/</link>
+      <pubDate>Fri, 17 Dec 2021 15:35:49 +0000</pubDate>
+      
+      <guid>https://filipe-varela.github.io/warguide.hackerschool.io/workshop/intent/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Intent:&lt;/strong&gt; An intent is an abstract description of an operation to be performed.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Intent servem para poder efetuar operações dentro do sistema android, como iniciar uma atividade e/ou serviço, indicar a um listener para reagir a mudanças de rede - Wifi ou dados por exemplo - entre outras forma de comunicação dentro do sistema.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../images/intent.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Activity VS Fragment</title>
+      <link>https://filipe-varela.github.io/warguide.hackerschool.io/workshop/activity_fragment/</link>
+      <pubDate>Fri, 17 Dec 2021 15:35:43 +0000</pubDate>
+      
+      <guid>https://filipe-varela.github.io/warguide.hackerschool.io/workshop/activity_fragment/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Esta página é um pouco extensa, recomendo irem com calma&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;No android, cada página pode ser vista como uma atividade ou como um fragmento:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Activity:&lt;/strong&gt; &lt;em&gt;An activity is a single, focused thing that the user can do. Almost all activities interact with the user, so the Activity class takes care of creating a window for you in which you can place your UI with setContentView(View)&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Fragment:&lt;/strong&gt; &lt;em&gt;A Fragment represents a reusable portion of your app&amp;rsquo;s UI. A fragment defines and manages its own layout, has its own lifecycle, and can handle its own input events. Fragments cannot live on their own&amp;ndash;they must be hosted by an activity or another fragment. The fragment’s view hierarchy becomes part of, or attaches to, the host’s view hierarchy.&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Podendo ajudar a analogia de uma atividade ser um caderno para uma cadeira.
+Vai-se gastar mais recursos em manter e comprar mais cadernos, mas consegue-se fazer todo o que se pretende nele.
+Contudo, se se utilizar e reutilizar as folhas que o mesmo contem para as mais várias cadeiras, então poupa-se recursos e talvez utilizar a mesma folha para várias ocasiões ou até reutilizar uma já usada.
+A relação entre atividade e fragmento é o mesmo, onde atividades são mais poderosas, mas gastam mais recursos, enquanto fragmentos são mais leves e conseguem ser reutilizados para outras ocasiões.
+Até se pode ter múltiplas janelas na aplicação e todas elas são geradas a partir do mesmo fragmento, mas em instâncias diferentes.
+Ver &lt;a href=&#34;../../tasks/slide&#34;&gt;Slide de Apresentação&lt;/a&gt; como exemplo/tarefa.&lt;/p&gt;
+&lt;h3 id=&#34;lifecycle&#34;&gt;LifeCycle&lt;/h3&gt;
+&lt;p&gt;Tanto a atividade como o fragmento têm os seus ciclos de vida, sendo que no backend se fez mais num dos passos do ciclo de vida da atividade.
+É importante ter uma noção de a atividade passa por estas fases, pelo simples facto de ser necessário registar certos &lt;em&gt;Listeners&lt;/em&gt; ou funções internas que estejam dependentes da atividade ou fragmento, isto é, só está ativo se estes estiverem ativos e desativado quando estes estiverem desativados da mesma forma.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Ciclo da Atividade&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Ciclo do Fragmento&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;../images/atividade_ciclo.png&#34; alt=&#34;&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;../images/fragmento_ciclo.png&#34; alt=&#34;&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h1 id=&#34;atividade&#34;&gt;Atividade&lt;/h1&gt;
+&lt;h2 id=&#34;implementação&#34;&gt;Implementação&lt;/h2&gt;
+&lt;p&gt;Imagine-se que se implementa mais um botão no menu do backend, debaixo do anterior, para poder ativar uma atividade:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;!-- RelativeLayout --&amp;gt;&lt;/span&gt;
+
+&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;Button&lt;/span&gt;
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;android:id=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;@+id/btn_atividade&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;android:layout_width=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;wrap_content&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;android:layout_height=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;wrap_content&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;android:text=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Click me!&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;android:layout_centerHorizontal=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;true&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;android:layout_below=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;@+id/txt_menu&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#f92672&#34;&gt;/&amp;gt;&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;!-- RelativeLayout --&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Com este, tem-se que a sua implementação fique da seguinte maneira no backend (ter atenção para ver do &lt;a href=&#34;../intent&#34;&gt;Intent&lt;/a&gt; para poder prosseguir com este exemplo):&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-kotlin&#34; data-lang=&#34;kotlin&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// No onCreate
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;val&lt;/span&gt; btnAtividade : Button = findViewById(R.id.btn_atividade)
+
+btnAtividade.sestOnClickListener {
+    &lt;span style=&#34;color:#75715e&#34;&gt;// Usando o intent para ativar a nova atividade
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;val&lt;/span&gt; intent = Intent(&lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;, SegundaAtividade&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt;.java)
+    startActivity(intent)
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;O que este pedaço de código faz é simplesmente começar uma nova atividade, sendo a mesma chamada &lt;code&gt;SegundaAtividade&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Ora, isto em principio daria erro, pois esta atividade não existe.
+Sendo por isso necessário criar os ficheiros necessários para essa mesma nova atividade&lt;/p&gt;
+&lt;h2 id=&#34;adicionar-atividades&#34;&gt;Adicionar atividades&lt;/h2&gt;
+&lt;p&gt;Para adicionar uma atividade, tem-se, como uma das vias, usar a palete de comandos com carregar no &lt;code&gt;Shift&lt;/code&gt; duas vezes rapidamente. 
+Daí, escreve-se &lt;code&gt;New&lt;/code&gt; e carrega-se em:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../images/new.png&#34; alt=&#34;New&#34;&gt;&lt;/p&gt;
+&lt;p&gt;De seguida, escolhe-se a opção &lt;code&gt;Empty Activity&lt;/code&gt; como ilustra a imagem:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../images/empty.png&#34; alt=&#34;Empty&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Aparecerá um &lt;em&gt;prompt&lt;/em&gt; e daí se escreve o nome de &lt;em&gt;SegundaAtividade&lt;/em&gt;.
+Carregando em &lt;em&gt;Finish&lt;/em&gt;, ter-se-á criada a nova atividade e, consequentemente, poder-se-á correr a aplicação, carregar no botão e a mesma irá mostrar a nova atividade!&lt;/p&gt;
+&lt;h1 id=&#34;fragmento&#34;&gt;Fragmento&lt;/h1&gt;
+&lt;h2 id=&#34;implementação-1&#34;&gt;Implementação&lt;/h2&gt;
+&lt;p&gt;Para a sua implementação, este processo é mais manual, sendo necessário neste caso gerar um ficheiro para o backend, &lt;code&gt;.kt&lt;/code&gt;, e para o frotend, &lt;code&gt;.xml&lt;/code&gt;.
+Para tal, abra-se a aba do projeto e carrega-se com o botão de lado direito na pasta que tem ambas atividades no backend e gera-se um novo ficheiro/class para o fragmento - &lt;code&gt;Fragmento.kt&lt;/code&gt;.
+Repete-se este processo para a pasta dos &lt;em&gt;resources&lt;/em&gt; ou &lt;em&gt;res&lt;/em&gt;, mais nomeadamente carregar com o botão do lado direito do rato na pasta dos &lt;em&gt;layout&lt;/em&gt; e criar um &lt;em&gt;Layout Resource file&lt;/em&gt; - &lt;code&gt;fragment_fragmento.xml&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../images/fragmento_estrutura.png&#34; alt=&#34;Fragmento Estrutura&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Agora com as bases feitas, só se precisa de ir, na imagem anterior, a &lt;code&gt;Gradle Scripts -&amp;gt; build.gradle (Module: ...)&lt;/code&gt; e acrescentar esta linha dentro das &lt;code&gt;dependencies&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-gradle&#34; data-lang=&#34;gradle&#34;&gt;implementation &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;androidx.fragment:fragment-ktx:1.4.0&amp;#39;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;E ter de dar &lt;em&gt;Sync Now&lt;/em&gt; ao projeto, num friso azul que esteja em cima.&lt;/p&gt;
+&lt;p&gt;Pondo isto, agora tem-se o necessário para chamar o fragmento.&lt;/p&gt;
+&lt;h2 id=&#34;chamar-o-fragmento&#34;&gt;Chamar o fragmento&lt;/h2&gt;
+&lt;p&gt;Para se poder adicionar o fragmento na atividade, tem-se de alterar o layout de &lt;code&gt;ConstrainLayout&lt;/code&gt; para relative no &lt;code&gt;activity_segunda_atividade.xml&lt;/code&gt; acrescentar o seguinte:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;androidx.fragment.app.FragmentContainerView&lt;/span&gt;
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;android:id=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;@+id/container_fragment&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;android:layout_width=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;match_parent&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;android:layout_height=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;wrap_content&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;android:layout_alignParentTop=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;true&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;android:layout_above=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;@id/txt_atividade&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#f92672&#34;&gt;/&amp;gt;&lt;/span&gt;
+
+&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;TextView&lt;/span&gt;
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;android:id=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;@+id/txt_atividade&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;android:layout_width=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;match_parent&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;android:layout_height=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;wrap_content&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;android:text=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Isto é a atividade&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;android:textAlignment=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;center&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;android:layout_alignParentBottom=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;true&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#f92672&#34;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;No &lt;code&gt;SegundaAtividade.kt&lt;/code&gt;, acrescenta-se o seguinte dentro de &lt;code&gt;onCreate&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-kotlin&#34; data-lang=&#34;kotlin&#34;&gt;supportFragmentManager.commit {
+    add&amp;lt;Fragmento&amp;gt;(R.id.container_fragment)
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Em principio, ter-se-á erros no &lt;code&gt;commit&lt;/code&gt; e no &lt;code&gt;add&lt;/code&gt;.
+Para resolver os mesmos, tem-se que dar import no primeiro - carregar &lt;code&gt;Alt+Enter&lt;/code&gt; com o cursos em cima do &lt;code&gt;commit&lt;/code&gt; - e no segundo tem-se que criar o fragmento internamente.
+Para tal e para se poder acrescentar algum elemento e interagir com o fragmento da mesma maneira que a atividade, tem-se no &lt;code&gt;Fragmento.kt&lt;/code&gt; que converter o mesmo para:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-kotlin&#34; data-lang=&#34;kotlin&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;import&lt;/span&gt; android.os.Bundle
+&lt;span style=&#34;color:#66d9ef&#34;&gt;import&lt;/span&gt; android.view.View
+&lt;span style=&#34;color:#66d9ef&#34;&gt;import&lt;/span&gt; androidx.fragment.app.Fragment
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Fragmento&lt;/span&gt; : Fragment(R.layout.fragment_fragmento) {
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;override&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;fun&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;onViewCreated&lt;/span&gt;(view: View, savedInstanceState: Bundle?) {
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;super&lt;/span&gt;.onViewCreated(view, savedInstanceState)
+        &lt;span style=&#34;color:#75715e&#34;&gt;/**
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;         * O onViewCreated age de forma semelhante que o onCreate,
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;         * precisando neste caso acrescentar o *view* antes do
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;         * findViewById.
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;         * 
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;         * Ex.:
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;         * val btnView : Button = view.findViewById(R.id.btn_fragmento)
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;         * 
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;         * Teria de haver um botão no fragment_fragmento.xml para este
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;         * pedaço de código ter efeito sem erros
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;         */&lt;/span&gt;
+    }
+    
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Agora, o &lt;code&gt;add&lt;/code&gt; da atividade que se estava a mexer anteriormente apresenta um erro que se resolve com um &lt;em&gt;import&lt;/em&gt; do mesmo modo que o &lt;code&gt;commit&lt;/code&gt;.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Com isto tudo, tem-se uma atividade e um fragmento acrescentados e se se correr a aplicação, tem-se que tudo corre perfeitamente.
+Agora, fica como desafio acrescentar outros elementos no &lt;code&gt;fragment_fragmento.xml&lt;/code&gt; para se poder interagir com o fragmento como fora feito com a atividade.&lt;/p&gt;
+&lt;p&gt;Exemplo: criar um botão e um objeto &lt;code&gt;&amp;lt;View/&amp;gt;&lt;/code&gt; no layout a fim do botão criar cores aleatórias. Baseado neste &lt;a href=&#34;&#34;&gt;exemplo&lt;/a&gt;. (colocar o exemplo no repositório).&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Exemplo do Backend</title>
@@ -607,7 +1004,7 @@ Para este workshop, o nível de API 27 será mais que suficiente.&lt;/p&gt;
       <guid>https://filipe-varela.github.io/warguide.hackerschool.io/workshop/intro/</guid>
       <description>&lt;p&gt;Este é a versão escrita do workshop de AppDev feita no dia 16/12/2021. 
 Nesta página é possível verificar as diferentes partes do mesmo em formato escrito e com &lt;em&gt;snippets&lt;/em&gt; de código.
-Entretanto, qualquer material pode ser visto &lt;a href=&#34;https://drive.google.com/drive/folders/1CCDfb7o79b6eR-xim18rZ4XgxLRkmvN8?usp=sharing&#34;&gt;aqui&lt;/a&gt;, bem como não esquecer que têm até dia 6 de janeiro de 2022 para entregar!&lt;/p&gt;
+Entretanto, qualquer material pode ser visto &lt;a href=&#34;https://drive.google.com/drive/folders/1CCDfb7o79b6eR-xim18rZ4XgxLRkmvN8?usp=sharing&#34;&gt;aqui&lt;/a&gt;, um repositório que criei com o exemplo final (esperado) do workshop &lt;a href=&#34;&#34;&gt;aqui&lt;/a&gt;, bem como não esquecer que têm até dia 6 de janeiro de 2022 para entregar!&lt;/p&gt;
 &lt;h2 id=&#34;tópicos-do-workshop&#34;&gt;Tópicos do workshop&lt;/h2&gt;
 &lt;p&gt;O workshop foi estruturado da seguinte forma:&lt;/p&gt;
 &lt;ol&gt;
@@ -638,16 +1035,15 @@ Entretanto, qualquer material pode ser visto &lt;a href=&#34;https://drive.googl
 &lt;ol&gt;
 &lt;li&gt;Conceitos vários
 &lt;ol&gt;
-&lt;li&gt;Activity vs Fragment&lt;/li&gt;
-&lt;li&gt;Intent&lt;/li&gt;
-&lt;li&gt;SharedPreferences&lt;/li&gt;
-&lt;li&gt;Resources&lt;/li&gt;
-&lt;li&gt;Box-Model&lt;/li&gt;
-&lt;li&gt;Utils&lt;/li&gt;
-&lt;li&gt;Exemplo prático final&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../activity_fragment&#34;&gt;Activity vs Fragment&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../intent&#34;&gt;Intent&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../sharedprefs&#34;&gt;SharedPreferences&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../resources&#34;&gt;Resources&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../box_model&#34;&gt;Box-Model&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../utils&#34;&gt;Utils&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
-&lt;li&gt;Boas práticas&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../boas_praticas&#34;&gt;Boas práticas&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;../../general/enunciado&#34;&gt;Enunciado&lt;/a&gt;&lt;/li&gt;
