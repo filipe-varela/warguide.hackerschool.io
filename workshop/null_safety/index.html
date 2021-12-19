@@ -10,11 +10,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="no-referrer-when-downgrade">
 
-<title>Workshop de Android - Guia do Workshop de Android do Recrutamento</title>
+<title>Null Safety - Guia do Workshop de Android do Recrutamento</title>
 
-<meta name="description" content="Este é a versão escrita do workshop de AppDev feita no dia 16/12/2021. Nesta página é possível verificar as diferentes partes do mesmo em formato escrito e com snippets de código. Entretanto, qualquer material pode ser visto aqui, bem como não esquecer que têm até dia 6 de janeiro de 2022 para entregar!
-Tópicos do workshop O workshop foi estruturado da seguinte forma:
- Android Studio  Estrutura do Android Frotend  XML View vs ViewGroup ID&rsquo;s Exemplo prático   Backend  Java VS Kotlin Python &amp; Kotlin Kotlin Trivia Null Safety Conexão de Backend com Frotend Exemplo prático     Mentalidade de AppDev  Conceitos vários  Activity vs Fragment Intent SharedPreferences Resources Box-Model Utils Exemplo prático final   Boas práticas   Enunciado  ">
+<meta name="description" content="Um dos maiores problemas que JAVA criou desde da sua criação foi o erro NullPointerException, um erro gerado quando se tenta efetuar uma operação sobre uma variável nula - null. Ora, como a variável é nula, não representa nada na memória, então efetuar qualquer operação sobre a mesma seria o mesmo como efetuar uma operação em nada.
+// Se se correr este código em JAVA // &#39;String nula&#39; irá aparecer na consola // pois se está a efetuar uma operação // sob uma variável nula String stringNula = null; try { stringNula.">
 
 <link rel="icon" type="image/x-icon" href="https://filipe-varela.github.io/warguide.hackerschool.io/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://filipe-varela.github.io/warguide.hackerschool.io/favicon.png">
@@ -42,21 +41,19 @@ Tópicos do workshop O workshop foi estruturado da seguinte forma:
 
 
 
-<meta property="og:title" content="Workshop de Android" />
-<meta property="og:description" content="Este é a versão escrita do workshop de AppDev feita no dia 16/12/2021. Nesta página é possível verificar as diferentes partes do mesmo em formato escrito e com snippets de código. Entretanto, qualquer material pode ser visto aqui, bem como não esquecer que têm até dia 6 de janeiro de 2022 para entregar!
-Tópicos do workshop O workshop foi estruturado da seguinte forma:
- Android Studio  Estrutura do Android Frotend  XML View vs ViewGroup ID&rsquo;s Exemplo prático   Backend  Java VS Kotlin Python &amp; Kotlin Kotlin Trivia Null Safety Conexão de Backend com Frotend Exemplo prático     Mentalidade de AppDev  Conceitos vários  Activity vs Fragment Intent SharedPreferences Resources Box-Model Utils Exemplo prático final   Boas práticas   Enunciado  " />
+<meta property="og:title" content="Null Safety" />
+<meta property="og:description" content="Um dos maiores problemas que JAVA criou desde da sua criação foi o erro NullPointerException, um erro gerado quando se tenta efetuar uma operação sobre uma variável nula - null. Ora, como a variável é nula, não representa nada na memória, então efetuar qualquer operação sobre a mesma seria o mesmo como efetuar uma operação em nada.
+// Se se correr este código em JAVA // &#39;String nula&#39; irá aparecer na consola // pois se está a efetuar uma operação // sob uma variável nula String stringNula = null; try { stringNula." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://filipe-varela.github.io/warguide.hackerschool.io/workshop/intro/" /><meta property="article:section" content="workshop" />
-<meta property="article:published_time" content="2021-12-17T14:55:23+00:00" />
-<meta property="article:modified_time" content="2021-12-17T14:55:23+00:00" />
+<meta property="og:url" content="https://filipe-varela.github.io/warguide.hackerschool.io/workshop/null_safety/" /><meta property="article:section" content="workshop" />
+<meta property="article:published_time" content="2021-12-17T15:35:12+00:00" />
+<meta property="article:modified_time" content="2021-12-17T15:35:12+00:00" />
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Workshop de Android"/>
-<meta name="twitter:description" content="Este é a versão escrita do workshop de AppDev feita no dia 16/12/2021. Nesta página é possível verificar as diferentes partes do mesmo em formato escrito e com snippets de código. Entretanto, qualquer material pode ser visto aqui, bem como não esquecer que têm até dia 6 de janeiro de 2022 para entregar!
-Tópicos do workshop O workshop foi estruturado da seguinte forma:
- Android Studio  Estrutura do Android Frotend  XML View vs ViewGroup ID&rsquo;s Exemplo prático   Backend  Java VS Kotlin Python &amp; Kotlin Kotlin Trivia Null Safety Conexão de Backend com Frotend Exemplo prático     Mentalidade de AppDev  Conceitos vários  Activity vs Fragment Intent SharedPreferences Resources Box-Model Utils Exemplo prático final   Boas práticas   Enunciado  "/>
+<meta name="twitter:title" content="Null Safety"/>
+<meta name="twitter:description" content="Um dos maiores problemas que JAVA criou desde da sua criação foi o erro NullPointerException, um erro gerado quando se tenta efetuar uma operação sobre uma variável nula - null. Ora, como a variável é nula, não representa nada na memória, então efetuar qualquer operação sobre a mesma seria o mesmo como efetuar uma operação em nada.
+// Se se correr este código em JAVA // &#39;String nula&#39; irá aparecer na consola // pois se está a efetuar uma operação // sob uma variável nula String stringNula = null; try { stringNula."/>
 
 
 
@@ -127,58 +124,37 @@ Tópicos do workshop O workshop foi estruturado da seguinte forma:
 
     <article class="post h-entry">
         <header class="post-header">
-            <h1 class="p-name post-title">Workshop de Android</h1>
+            <h1 class="p-name post-title">Null Safety</h1>
 
             
         </header>
         <div class="content e-content">
-            <p>Este é a versão escrita do workshop de AppDev feita no dia 16/12/2021. 
-Nesta página é possível verificar as diferentes partes do mesmo em formato escrito e com <em>snippets</em> de código.
-Entretanto, qualquer material pode ser visto <a href="https://drive.google.com/drive/folders/1CCDfb7o79b6eR-xim18rZ4XgxLRkmvN8?usp=sharing">aqui</a>, bem como não esquecer que têm até dia 6 de janeiro de 2022 para entregar!</p>
-<h2 id="tópicos-do-workshop">Tópicos do workshop</h2>
-<p>O workshop foi estruturado da seguinte forma:</p>
-<ol>
-<li>Android Studio
-<ol>
-<li><a href="../estrutura">Estrutura do Android</a></li>
-<li>Frotend
-<ol>
-<li><a href="../xml">XML</a></li>
-<li><a href="../view_viewgroup">View vs ViewGroup</a></li>
-<li><a href="../id">ID&rsquo;s</a></li>
-<li><a href="../exemplo_frotend">Exemplo prático</a></li>
-</ol>
-</li>
-<li>Backend
-<ol>
-<li><a href="../java_kotlin">Java VS Kotlin</a></li>
-<li><a href="../python_kotlin">Python &amp; Kotlin</a></li>
-<li><a href="../kotlin_trivia">Kotlin Trivia</a></li>
-<li><a href="../null_safety">Null Safety</a></li>
-<li><a href="../conexao_frotend_backend">Conexão de Backend com Frotend</a></li>
-<li><a href="../exemplo_backend">Exemplo prático</a></li>
-</ol>
-</li>
-</ol>
-</li>
-<li>Mentalidade de AppDev
-<ol>
-<li>Conceitos vários
-<ol>
-<li>Activity vs Fragment</li>
-<li>Intent</li>
-<li>SharedPreferences</li>
-<li>Resources</li>
-<li>Box-Model</li>
-<li>Utils</li>
-<li>Exemplo prático final</li>
-</ol>
-</li>
-<li>Boas práticas</li>
-</ol>
-</li>
-<li><a href="../../general/enunciado">Enunciado</a></li>
-</ol>
+            <p>Um dos maiores problemas que JAVA criou desde da sua criação foi o erro <code>NullPointerException</code>, um erro gerado quando se tenta efetuar uma operação sobre uma variável nula - <code>null</code>.
+Ora, como a variável é nula, não representa nada na memória, então efetuar qualquer operação sobre a mesma seria o mesmo como efetuar uma operação em nada.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">// Se se correr este código em JAVA
+</span><span style="color:#75715e">// &#39;String nula&#39; irá aparecer na consola
+</span><span style="color:#75715e">// pois se está a efetuar uma operação
+</span><span style="color:#75715e">// sob uma variável nula
+</span><span style="color:#75715e"></span>String stringNula <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+
+<span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+  stringNula<span style="color:#f92672">.</span><span style="color:#a6e22e">isEmpty</span><span style="color:#f92672">();</span>
+<span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>NullPointerExcetion e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+  System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;String nula&#34;</span><span style="color:#f92672">);</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>Este erro já custou milhões de euros ou dolares à industria, sendo por isso um dos maiores problemas enquanto se lida com JAVA e um dos problemas que a Google quis evitar aquando se desenvolveu o Kotlin.</p>
+<p>Em Kotlin, as variáveis são por defeito não nulas, isto é, se se tentar atribuir o valor <code>null</code> a uma das variáveis vistas anteriormente, iria-se ter um erro de sintaxe e o programa não iria compilar.
+Sendo assim, para se ter variáveis nulas, tem-se que explicitamente indicar no código, usando o ponto de interrogação - <code>?</code> - na declaração das variáveis</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#75715e">// Indica que pode ser nulo com “?”
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> stringNula : String? = <span style="color:#e6db74">&#34;&#34;</span>
+<span style="color:#66d9ef">var</span> stringNaoNula : String = <span style="color:#e6db74">&#34;&#34;</span>
+
+<span style="color:#75715e">// stringNula!!.isEmpty()
+</span><span style="color:#75715e"></span>stringNula<span style="color:#f92672">?.</span>isEmpty()
+stringNaoNula.isEmpty()
+</code></pre></div><p>Posteriormente, qualquer operação na variável que seja nula tem que ter o sinal <code>?</code> para poder executar a operação caso não seja nula - consecutivamente, não executará se for nula.
+Caso se queira mesmo que seja executada a função na variável nula no momento em que for executado o comando, pode-se utilizar o <code>!!</code>.
+Contudo, com este último pode-se estar sujeito ao erro de <code>NullPointerException</code>, pois se tentou executar uma operação numa variável nula caso não se tenha cuidado.</p>
 
         </div>
         
@@ -189,7 +165,7 @@ Entretanto, qualquer material pode ser visto <a href="https://drive.google.com/d
         <div class="post-date dt-published">2021-12-17</div>
     
 
-    <a class="post-hidden-url u-url" href="https://filipe-varela.github.io/warguide.hackerschool.io/workshop/intro/">https://filipe-varela.github.io/warguide.hackerschool.io/workshop/intro/</a>
+    <a class="post-hidden-url u-url" href="https://filipe-varela.github.io/warguide.hackerschool.io/workshop/null_safety/">https://filipe-varela.github.io/warguide.hackerschool.io/workshop/null_safety/</a>
     <a href="https://filipe-varela.github.io/warguide.hackerschool.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
 
 
@@ -206,10 +182,12 @@ Entretanto, qualquer material pode ser visto <a href="https://drive.google.com/d
     <div class="pagination post-pagination">
         <div class="left pagination-item ">
             
-                <a href="/warguide.hackerschool.io/workshop/estrutura/">Estrutura do Android Studio</a>
+                <a href="/warguide.hackerschool.io/workshop/conexao_frotend_backend/">Conexao de Backend com Frotend</a>
             
         </div>
-        <div class="right pagination-item disabled">
+        <div class="right pagination-item ">
+            
+                <a href="/warguide.hackerschool.io/workshop/kotlin_trivia/">Kotlin Trivia(l)</a>
             
         </div>
     </div>

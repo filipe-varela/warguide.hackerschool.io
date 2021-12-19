@@ -10,11 +10,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="no-referrer-when-downgrade">
 
-<title>Workshop de Android - Guia do Workshop de Android do Recrutamento</title>
+<title>JAVA VS Kotlin - Guia do Workshop de Android do Recrutamento</title>
 
-<meta name="description" content="Este é a versão escrita do workshop de AppDev feita no dia 16/12/2021. Nesta página é possível verificar as diferentes partes do mesmo em formato escrito e com snippets de código. Entretanto, qualquer material pode ser visto aqui, bem como não esquecer que têm até dia 6 de janeiro de 2022 para entregar!
-Tópicos do workshop O workshop foi estruturado da seguinte forma:
- Android Studio  Estrutura do Android Frotend  XML View vs ViewGroup ID&rsquo;s Exemplo prático   Backend  Java VS Kotlin Python &amp; Kotlin Kotlin Trivia Null Safety Conexão de Backend com Frotend Exemplo prático     Mentalidade de AppDev  Conceitos vários  Activity vs Fragment Intent SharedPreferences Resources Box-Model Utils Exemplo prático final   Boas práticas   Enunciado  ">
+<meta name="description" content="JAVA Por muito tempo, JAVA foi a linguagem de programação para Android. Sendo uma linguagem de programação orientada por objetos antiga, é precisamente uma linguagem potente, próxima da linguagem máquina e, ao mesmo tempo, tem um grande suporte na internet. Para quem quiser experimentar em mexer em JAVA, recomendo JAVA 1.8, dado por ter imensas ferramentas semelhantes às linguagens de programação atuais e novas.
+Kotlin Por outro lado, dado por não haver uma linguagem de programação dedicada e adaptada ao Android, a Google decidiu em desenvolver uma linguagem baseada em JAVA que conseguisse prevenir/cobrir os problemas existentes com esta última - Kotlin.">
 
 <link rel="icon" type="image/x-icon" href="https://filipe-varela.github.io/warguide.hackerschool.io/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://filipe-varela.github.io/warguide.hackerschool.io/favicon.png">
@@ -42,21 +41,19 @@ Tópicos do workshop O workshop foi estruturado da seguinte forma:
 
 
 
-<meta property="og:title" content="Workshop de Android" />
-<meta property="og:description" content="Este é a versão escrita do workshop de AppDev feita no dia 16/12/2021. Nesta página é possível verificar as diferentes partes do mesmo em formato escrito e com snippets de código. Entretanto, qualquer material pode ser visto aqui, bem como não esquecer que têm até dia 6 de janeiro de 2022 para entregar!
-Tópicos do workshop O workshop foi estruturado da seguinte forma:
- Android Studio  Estrutura do Android Frotend  XML View vs ViewGroup ID&rsquo;s Exemplo prático   Backend  Java VS Kotlin Python &amp; Kotlin Kotlin Trivia Null Safety Conexão de Backend com Frotend Exemplo prático     Mentalidade de AppDev  Conceitos vários  Activity vs Fragment Intent SharedPreferences Resources Box-Model Utils Exemplo prático final   Boas práticas   Enunciado  " />
+<meta property="og:title" content="JAVA VS Kotlin" />
+<meta property="og:description" content="JAVA Por muito tempo, JAVA foi a linguagem de programação para Android. Sendo uma linguagem de programação orientada por objetos antiga, é precisamente uma linguagem potente, próxima da linguagem máquina e, ao mesmo tempo, tem um grande suporte na internet. Para quem quiser experimentar em mexer em JAVA, recomendo JAVA 1.8, dado por ter imensas ferramentas semelhantes às linguagens de programação atuais e novas.
+Kotlin Por outro lado, dado por não haver uma linguagem de programação dedicada e adaptada ao Android, a Google decidiu em desenvolver uma linguagem baseada em JAVA que conseguisse prevenir/cobrir os problemas existentes com esta última - Kotlin." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://filipe-varela.github.io/warguide.hackerschool.io/workshop/intro/" /><meta property="article:section" content="workshop" />
-<meta property="article:published_time" content="2021-12-17T14:55:23+00:00" />
-<meta property="article:modified_time" content="2021-12-17T14:55:23+00:00" />
+<meta property="og:url" content="https://filipe-varela.github.io/warguide.hackerschool.io/workshop/java_kotlin/" /><meta property="article:section" content="workshop" />
+<meta property="article:published_time" content="2021-12-17T15:34:47+00:00" />
+<meta property="article:modified_time" content="2021-12-17T15:34:47+00:00" />
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Workshop de Android"/>
-<meta name="twitter:description" content="Este é a versão escrita do workshop de AppDev feita no dia 16/12/2021. Nesta página é possível verificar as diferentes partes do mesmo em formato escrito e com snippets de código. Entretanto, qualquer material pode ser visto aqui, bem como não esquecer que têm até dia 6 de janeiro de 2022 para entregar!
-Tópicos do workshop O workshop foi estruturado da seguinte forma:
- Android Studio  Estrutura do Android Frotend  XML View vs ViewGroup ID&rsquo;s Exemplo prático   Backend  Java VS Kotlin Python &amp; Kotlin Kotlin Trivia Null Safety Conexão de Backend com Frotend Exemplo prático     Mentalidade de AppDev  Conceitos vários  Activity vs Fragment Intent SharedPreferences Resources Box-Model Utils Exemplo prático final   Boas práticas   Enunciado  "/>
+<meta name="twitter:title" content="JAVA VS Kotlin"/>
+<meta name="twitter:description" content="JAVA Por muito tempo, JAVA foi a linguagem de programação para Android. Sendo uma linguagem de programação orientada por objetos antiga, é precisamente uma linguagem potente, próxima da linguagem máquina e, ao mesmo tempo, tem um grande suporte na internet. Para quem quiser experimentar em mexer em JAVA, recomendo JAVA 1.8, dado por ter imensas ferramentas semelhantes às linguagens de programação atuais e novas.
+Kotlin Por outro lado, dado por não haver uma linguagem de programação dedicada e adaptada ao Android, a Google decidiu em desenvolver uma linguagem baseada em JAVA que conseguisse prevenir/cobrir os problemas existentes com esta última - Kotlin."/>
 
 
 
@@ -127,58 +124,22 @@ Tópicos do workshop O workshop foi estruturado da seguinte forma:
 
     <article class="post h-entry">
         <header class="post-header">
-            <h1 class="p-name post-title">Workshop de Android</h1>
+            <h1 class="p-name post-title">JAVA VS Kotlin</h1>
 
             
         </header>
         <div class="content e-content">
-            <p>Este é a versão escrita do workshop de AppDev feita no dia 16/12/2021. 
-Nesta página é possível verificar as diferentes partes do mesmo em formato escrito e com <em>snippets</em> de código.
-Entretanto, qualquer material pode ser visto <a href="https://drive.google.com/drive/folders/1CCDfb7o79b6eR-xim18rZ4XgxLRkmvN8?usp=sharing">aqui</a>, bem como não esquecer que têm até dia 6 de janeiro de 2022 para entregar!</p>
-<h2 id="tópicos-do-workshop">Tópicos do workshop</h2>
-<p>O workshop foi estruturado da seguinte forma:</p>
-<ol>
-<li>Android Studio
-<ol>
-<li><a href="../estrutura">Estrutura do Android</a></li>
-<li>Frotend
-<ol>
-<li><a href="../xml">XML</a></li>
-<li><a href="../view_viewgroup">View vs ViewGroup</a></li>
-<li><a href="../id">ID&rsquo;s</a></li>
-<li><a href="../exemplo_frotend">Exemplo prático</a></li>
-</ol>
-</li>
-<li>Backend
-<ol>
-<li><a href="../java_kotlin">Java VS Kotlin</a></li>
-<li><a href="../python_kotlin">Python &amp; Kotlin</a></li>
-<li><a href="../kotlin_trivia">Kotlin Trivia</a></li>
-<li><a href="../null_safety">Null Safety</a></li>
-<li><a href="../conexao_frotend_backend">Conexão de Backend com Frotend</a></li>
-<li><a href="../exemplo_backend">Exemplo prático</a></li>
-</ol>
-</li>
-</ol>
-</li>
-<li>Mentalidade de AppDev
-<ol>
-<li>Conceitos vários
-<ol>
-<li>Activity vs Fragment</li>
-<li>Intent</li>
-<li>SharedPreferences</li>
-<li>Resources</li>
-<li>Box-Model</li>
-<li>Utils</li>
-<li>Exemplo prático final</li>
-</ol>
-</li>
-<li>Boas práticas</li>
-</ol>
-</li>
-<li><a href="../../general/enunciado">Enunciado</a></li>
-</ol>
+            <h2 id="java">JAVA</h2>
+<p>Por muito tempo, <a href="https://developer.android.com/codelabs/build-your-first-android-app#0">JAVA</a> foi a linguagem de programação para Android.
+Sendo uma linguagem de programação orientada por objetos <em>antiga</em>, é precisamente uma linguagem potente, próxima da linguagem máquina e, ao mesmo tempo, tem um grande suporte na internet.
+Para quem quiser experimentar em mexer em JAVA, recomendo JAVA 1.8, dado por ter imensas ferramentas semelhantes às linguagens de programação atuais e novas.</p>
+<h2 id="kotlin">Kotlin</h2>
+<p>Por outro lado, dado por não haver uma linguagem de programação dedicada e adaptada ao Android, a Google decidiu em desenvolver uma linguagem baseada em JAVA que conseguisse prevenir/cobrir os problemas existentes com esta última - <a href="https://kotlinlang.org/docs/android-overview.html">Kotlin</a>.
+Kotlin é, tal como o JAVA, uma linguagem orientada por objetos e contem bastante semelhanças com linguagens recentes como Python ou Javascript, tornando-se uma linguagem ideal para iniciantes poderem programar.
+Não só isso, mas como partilha o mesmo encoder e, consecutivamente, a <em><a href="https://pt.wikipedia.org/wiki/M%C3%A1quina_virtual_Java">JAVA Virtual Machine (JVM)</a></em>, Kotlin e JAVA podem coexistir no mesmo projeto sem haver perdas de performance e/ou de incompatibilidades.</p>
+<p><img src="../images/jvm.png" alt="JVM"></p>
+<p>Para este workshop, foi usado o Kotlin pela sua simplicidade e por agora ser a linguagem oficial, ditada pela Google, no desenvolvimento de aplicações Android.
+Para além disso, o documento que se irá alterar, inicialmente, será o <code>MainActivity.kt</code>.</p>
 
         </div>
         
@@ -189,7 +150,7 @@ Entretanto, qualquer material pode ser visto <a href="https://drive.google.com/d
         <div class="post-date dt-published">2021-12-17</div>
     
 
-    <a class="post-hidden-url u-url" href="https://filipe-varela.github.io/warguide.hackerschool.io/workshop/intro/">https://filipe-varela.github.io/warguide.hackerschool.io/workshop/intro/</a>
+    <a class="post-hidden-url u-url" href="https://filipe-varela.github.io/warguide.hackerschool.io/workshop/java_kotlin/">https://filipe-varela.github.io/warguide.hackerschool.io/workshop/java_kotlin/</a>
     <a href="https://filipe-varela.github.io/warguide.hackerschool.io/" class="p-name p-author post-hidden-author h-card" rel="me"></a>
 
 
@@ -206,10 +167,12 @@ Entretanto, qualquer material pode ser visto <a href="https://drive.google.com/d
     <div class="pagination post-pagination">
         <div class="left pagination-item ">
             
-                <a href="/warguide.hackerschool.io/workshop/estrutura/">Estrutura do Android Studio</a>
+                <a href="/warguide.hackerschool.io/workshop/python_kotlin/">Python &amp; Kotlin</a>
             
         </div>
-        <div class="right pagination-item disabled">
+        <div class="right pagination-item ">
+            
+                <a href="/warguide.hackerschool.io/workshop/exemplo_frotend/">Exemplo do Frotend</a>
             
         </div>
     </div>

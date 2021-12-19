@@ -24,6 +24,332 @@ Um guia mais detalhado &lt;a href=&#34;https://developer.android.com/studio/debu
     </item>
     
     <item>
+      <title>Exemplo do Backend</title>
+      <link>https://filipe-varela.github.io/warguide.hackerschool.io/workshop/exemplo_backend/</link>
+      <pubDate>Fri, 17 Dec 2021 15:35:30 +0000</pubDate>
+      
+      <guid>https://filipe-varela.github.io/warguide.hackerschool.io/workshop/exemplo_backend/</guid>
+      <description>&lt;p&gt;Vai-se ao &lt;code&gt;/src/main/res/&lt;/code&gt; da &lt;a href=&#34;../estrutura&#34;&gt;estrutura&lt;/a&gt; do projeto e abre-se o &lt;code&gt;MainActivity.kt&lt;/code&gt;.
+Para ajuda, pode-se carregar em &lt;code&gt;Shift&lt;/code&gt; duas vezes rapidamente para aparecer uma palete de comandos. Daí, pode-se escrever &lt;code&gt;MainActivity&lt;/code&gt; e deve aparecer o ficheiro que se pretende como um dos sugeridos.&lt;/p&gt;
+&lt;p&gt;Daí, deve-se ter o seguinte:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-kotlin&#34; data-lang=&#34;kotlin&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;import&lt;/span&gt; androidx.appcompat.app.AppCompatActivity
+&lt;span style=&#34;color:#66d9ef&#34;&gt;import&lt;/span&gt; android.os.Bundle
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;MainActivity&lt;/span&gt; : AppCompatActivity() {
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;override&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;fun&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;onCreate&lt;/span&gt;(savedInstanceState: Bundle?) {
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;super&lt;/span&gt;.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Daqui, tem-se que o código aqui feito é dentro do &lt;code&gt;onCreate&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;declarar-os-elementos-do-ui&#34;&gt;Declarar os elementos do UI&lt;/h2&gt;
+&lt;p&gt;Para chamar os elementos no UI, tem-se de colocar em primeiro lugar um &lt;a href=&#34;../id&#34;&gt;ID&lt;/a&gt; no botão.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;Button&lt;/span&gt;
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;android:id=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;@+id/btn_menu&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;android:layout_width=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;wrap_content&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;android:layout_height=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;wrap_content&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;android:text=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Click me!&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;android:layout_centerHorizontal=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;true&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;android:layout_below=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;@+id/txt_menu&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Para depois se poder chamar tanto o texto como o botão do UI no Backend:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-kotlin&#34; data-lang=&#34;kotlin&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;val&lt;/span&gt; txtView : TextView = findViewById(R.id.txt_menu)
+&lt;span style=&#34;color:#66d9ef&#34;&gt;val&lt;/span&gt; btnView : Button = findViewById(R.id.btn_menu)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;Se aparecer algum erro, põe o cursos perto do mesmo e faz &lt;code&gt;Alt+Enter&lt;/code&gt;. Deve aparecer algumas sugestões para resolver o mesmo. Em principio, deve ser preciso importar, ou seja, o &lt;code&gt;import&lt;/code&gt;, mas se não for, fala comigo para poder ver do problema ou tenta resolver procurando na internet.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;R&lt;/code&gt; é como se fosse uma pasta onde se tem todos os recursos estáticos - que são constantes no decorrer da aplicação -, tais como, &lt;code&gt;layout&lt;/code&gt;&amp;rsquo;s, id&amp;rsquo;s ou valores de cores/dimensões/textos. De lá, se quer obter o valor dos id&amp;rsquo;s que se criou previamente&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;alternar-o-texto&#34;&gt;Alternar o texto&lt;/h2&gt;
+&lt;p&gt;Agora pretende-se alterar o texto &lt;code&gt;&#39;Hello World!&#39;&lt;/code&gt; por outros dois.
+Para tal, vamos usar uma das propriedades do botão e adicionar uma ação quando este é clicado.&lt;/p&gt;
+&lt;p&gt;Logo depois da sua declaração:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-kotlin&#34; data-lang=&#34;kotlin&#34;&gt;btnView.setOnClickListener {
+    txtView.text = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;HackerSchool rocks!&amp;#34;&lt;/span&gt;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Agora, se se correr a aplicação, tem-se que o texto muda para &lt;code&gt;&#39;HackerSchool rocks!&#39;&lt;/code&gt; quando o botão é clicado.&lt;/p&gt;
+&lt;p&gt;A fim de gerar este efeito de alternar o texto quando se carrega no botão, tem-se que criar uma variável booleana em cima do &lt;code&gt;onCreate&lt;/code&gt; (podendo ser noutro lugar, mas põe-se antes para conveniência e boa prática):&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-kotlin&#34; data-lang=&#34;kotlin&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; mudarTexto = &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;E mudar a ação do botão para:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-kotlin&#34; data-lang=&#34;kotlin&#34;&gt;btnView.setOnClickListener {
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (mudarTexto) {
+        txtView.text = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;HackerSchool rocks!&amp;#34;&lt;/span&gt;
+        &lt;span style=&#34;color:#75715e&#34;&gt;// Negar o valor do mudarTexto para 
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#75715e&#34;&gt;// gerar o efeito de alternação
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;        mudarTexto = mudarTexto.not()
+    } &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; {
+        txtView.text = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;You rock!&amp;#34;&lt;/span&gt;
+        mudarTexto = mudarTexto.not()
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Quando se correr a aplicação agora, tem-se que o texto se vai alternando.&lt;/p&gt;
+&lt;h2 id=&#34;exemplo-completo&#34;&gt;Exemplo completo&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-kotlin&#34; data-lang=&#34;kotlin&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;import&lt;/span&gt; androidx.appcompat.app.AppCompatActivity
+&lt;span style=&#34;color:#66d9ef&#34;&gt;import&lt;/span&gt; android.os.Bundle
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;MainActivity&lt;/span&gt; : AppCompatActivity() {
+    &lt;span style=&#34;color:#75715e&#34;&gt;// Variável para alternar o texto
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; mudarTexto = &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;override&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;fun&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;onCreate&lt;/span&gt;(savedInstanceState: Bundle?) {
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;super&lt;/span&gt;.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        &lt;span style=&#34;color:#75715e&#34;&gt;// Declarar os objetos na UI
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;val&lt;/span&gt; txtView : TextView = findViewById(R.id.txt_menu)
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;val&lt;/span&gt; btnView : Button = findViewById(R.id.btn_menu)
+
+        &lt;span style=&#34;color:#75715e&#34;&gt;// Quando carregado, alterar o texto para um novo
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#75715e&#34;&gt;// e negar o valor mudarTexto
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;        btnView.setOnClickListener {
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (mudarTexto) {
+                txtView.text = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;HackerSchool rocks!&amp;#34;&lt;/span&gt;
+                &lt;span style=&#34;color:#75715e&#34;&gt;// Negar o valor do mudarTexto para gerar 
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;                &lt;span style=&#34;color:#75715e&#34;&gt;// o efeito de alternação
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;                mudarTexto = mudarTexto.not()
+            } &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; {
+                txtView.text = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;You rock!&amp;#34;&lt;/span&gt;
+                mudarTexto = mudarTexto.not()
+            }
+        }
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>Conexao de Backend com Frotend</title>
+      <link>https://filipe-varela.github.io/warguide.hackerschool.io/workshop/conexao_frotend_backend/</link>
+      <pubDate>Fri, 17 Dec 2021 15:35:24 +0000</pubDate>
+      
+      <guid>https://filipe-varela.github.io/warguide.hackerschool.io/workshop/conexao_frotend_backend/</guid>
+      <description>&lt;p&gt;Para concluir a parte de Backend, a fim de se poder conectar o UI já criado com o Backend da aplicação, deve-se usar o método &lt;code&gt;findViewById&lt;/code&gt;, que vem já importado, se assim se pode dizer, dentro da atividade:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-kotlin&#34; data-lang=&#34;kotlin&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;override&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;fun&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;onCreate&lt;/span&gt;(savedInstanceState: Bundle?) {
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;super&lt;/span&gt;.onCreate(savedInstanceState)
+    setContentView(R.layout.activity_main)
+
+    &lt;span style=&#34;color:#75715e&#34;&gt;// Pode-se chamar o método aqui
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;val&lt;/span&gt; txtView : TextView = findViewById(R.id.txt_menu)
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>Null Safety</title>
+      <link>https://filipe-varela.github.io/warguide.hackerschool.io/workshop/null_safety/</link>
+      <pubDate>Fri, 17 Dec 2021 15:35:12 +0000</pubDate>
+      
+      <guid>https://filipe-varela.github.io/warguide.hackerschool.io/workshop/null_safety/</guid>
+      <description>&lt;p&gt;Um dos maiores problemas que JAVA criou desde da sua criação foi o erro &lt;code&gt;NullPointerException&lt;/code&gt;, um erro gerado quando se tenta efetuar uma operação sobre uma variável nula - &lt;code&gt;null&lt;/code&gt;.
+Ora, como a variável é nula, não representa nada na memória, então efetuar qualquer operação sobre a mesma seria o mesmo como efetuar uma operação em nada.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// Se se correr este código em JAVA
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// &amp;#39;String nula&amp;#39; irá aparecer na consola
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// pois se está a efetuar uma operação
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// sob uma variável nula
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;String stringNula &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;null&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;;&lt;/span&gt;
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;try&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;
+  stringNula&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;isEmpty&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;();&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;catch&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;NullPointerExcetion e&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;
+  System&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;out&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;println&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;String nula&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;);&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Este erro já custou milhões de euros ou dolares à industria, sendo por isso um dos maiores problemas enquanto se lida com JAVA e um dos problemas que a Google quis evitar aquando se desenvolveu o Kotlin.&lt;/p&gt;
+&lt;p&gt;Em Kotlin, as variáveis são por defeito não nulas, isto é, se se tentar atribuir o valor &lt;code&gt;null&lt;/code&gt; a uma das variáveis vistas anteriormente, iria-se ter um erro de sintaxe e o programa não iria compilar.
+Sendo assim, para se ter variáveis nulas, tem-se que explicitamente indicar no código, usando o ponto de interrogação - &lt;code&gt;?&lt;/code&gt; - na declaração das variáveis&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-kotlin&#34; data-lang=&#34;kotlin&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// Indica que pode ser nulo com “?”
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; stringNula : String? = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; stringNaoNula : String = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;// stringNula!!.isEmpty()
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;stringNula&lt;span style=&#34;color:#f92672&#34;&gt;?.&lt;/span&gt;isEmpty()
+stringNaoNula.isEmpty()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Posteriormente, qualquer operação na variável que seja nula tem que ter o sinal &lt;code&gt;?&lt;/code&gt; para poder executar a operação caso não seja nula - consecutivamente, não executará se for nula.
+Caso se queira mesmo que seja executada a função na variável nula no momento em que for executado o comando, pode-se utilizar o &lt;code&gt;!!&lt;/code&gt;.
+Contudo, com este último pode-se estar sujeito ao erro de &lt;code&gt;NullPointerException&lt;/code&gt;, pois se tentou executar uma operação numa variável nula caso não se tenha cuidado.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Kotlin Trivia(l)</title>
+      <link>https://filipe-varela.github.io/warguide.hackerschool.io/workshop/kotlin_trivia/</link>
+      <pubDate>Fri, 17 Dec 2021 15:35:03 +0000</pubDate>
+      
+      <guid>https://filipe-varela.github.io/warguide.hackerschool.io/workshop/kotlin_trivia/</guid>
+      <description>&lt;p&gt;Fora das comparações, eis alguns excertos daquilo que se pode escrever em Kotlin:&lt;/p&gt;
+&lt;h3 id=&#34;declaração-de-variáveis&#34;&gt;Declaração de variáveis&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-kotlin&#34; data-lang=&#34;kotlin&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; inteiro : Int = &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; flutuante : Float = &lt;span style=&#34;color:#ae81ff&#34;&gt;3.14f&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; duplo : Double = &lt;span style=&#34;color:#ae81ff&#34;&gt;3.14&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;// este é mais preciso que float
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; texto : String = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;HackerSchool&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; booleano : Boolean = &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;constantes&#34;&gt;Constantes&lt;/h4&gt;
+&lt;p&gt;Podem ser declaradas variáveis com o termo &lt;code&gt;val&lt;/code&gt; variáveis que só pode ser atribuído uma única vez um valor.
+Caso haja uma segunda, haverá erro de compilação.
+Contudo, variáveis como esta pode ter propriedades alteradas do mesmo modo que fosse um objeto, a partir de um &lt;code&gt;setter&lt;/code&gt; ou de um &lt;code&gt;getter&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-kotlin&#34; data-lang=&#34;kotlin&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;val&lt;/span&gt; valorConstante = &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;// Vai dar erro
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;valorConstante = &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;
+valorConstante = valorConstante + &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;// Não vai dar erro
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;valorConstante.inc()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;alguns-modificadores-de-visibilidade&#34;&gt;(Alguns) modificadores de visibilidade&lt;/h4&gt;
+&lt;p&gt;Por default, quando declarada uma variável até agora, a mesma seria pública, isto é, poderia ser acedida fora do documento ao qual esta fora declarada.
+Por outro lado, é possível declarar variáveis que só podem ser acedidas dentro do mesmo documento, sendo essas &lt;code&gt;private&lt;/code&gt; ou privadas.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-kotlin&#34; data-lang=&#34;kotlin&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// O `public` pode ser omitido
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; publica : Int = &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;// Default
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; privada : Int = &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;inicialização-tardia&#34;&gt;Inicialização tardia&lt;/h4&gt;
+&lt;p&gt;Por vezes pode ser conveniente declarar um objeto, mesmo antes de se poder inicializá-lo, pois não se sabe que condições este será no futuro.
+Para tal, usa-se o comando &lt;code&gt;lateinit var&lt;/code&gt; para indicar que queremos inicializar mais tarde este objeto ou variável.
+Atenção que não é recomendado usar este comando dentro de um método e, ao mesmo tempo, não é possível para tipos primitivos, como inteiros ou flutuantes.
+Para estes, é necessário dar um valor por defeito, &lt;em&gt;default&lt;/em&gt;, para serem declarados e alterados mais tarde (tendo assim de necessitar do parâmetro &lt;em&gt;var&lt;/em&gt;).&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-kotlin&#34; data-lang=&#34;kotlin&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;lateinit&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; txtView : TextView
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;listas-e-mapas&#34;&gt;Listas e Mapas&lt;/h2&gt;
+&lt;p&gt;Tal como em Python, é possível em Kotlin criar listas e mapas (dicionários do Python).
+Contudo, Kotlin tem uma particularidade neste departamento em que as mesmas podem ser &lt;em&gt;mutáveis&lt;/em&gt; ou &lt;em&gt;imutáveis&lt;/em&gt;.
+Isto é, uma lista (mapa) podem ter a propriedade de mudar de tamanho, acrescentar ou remover elementos, se forem mutáveis.
+Caso contrário, se não poderem alterar o seu tamanho, então são imutáveis.
+Esta nomenclatura ajuda em lidar com melhor armazenamento de memória, pois só se aloca um espaço certo na memória, e com dados guardados em bases de dados ou armazenamento do sistema.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-kotlin&#34; data-lang=&#34;kotlin&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;val&lt;/span&gt; lMutavel : MutableList&amp;lt;Int&amp;gt; = mutableListOf() 
+&lt;span style=&#34;color:#66d9ef&#34;&gt;val&lt;/span&gt; lImutavel : List&amp;lt;Int&amp;gt; = listOf()
+&lt;span style=&#34;color:#66d9ef&#34;&gt;val&lt;/span&gt; mMutavel : MutableMap&amp;lt;String, Int&amp;gt; = mutableMapOf() 
+&lt;span style=&#34;color:#66d9ef&#34;&gt;val&lt;/span&gt; mImutavel : Map&amp;lt;Int, Int&amp;gt; = mapOf() 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;funções-lambda&#34;&gt;Funções Lambda&lt;/h3&gt;
+&lt;p&gt;Kotlin também pode conter funções lambda - funções anónimas e criadas/declaradas no momento.
+A estrutura das mesmas pode ser representada da seguinte maneira:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-kotlin&#34; data-lang=&#34;kotlin&#34;&gt;lMutavel.forEach {
+    &lt;span style=&#34;color:#75715e&#34;&gt;// Incrementa cada elemento
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;it&lt;/span&gt;.inc()
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;A variável &lt;code&gt;it&lt;/code&gt; é uma variável gerada automaticamente dentro do &lt;code&gt;forEach&lt;/code&gt; para representar o elemento em questão da operação - neste caso os inteiros dentro da lista &lt;code&gt;lMutavel&lt;/code&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Python &amp; Kotlin</title>
+      <link>https://filipe-varela.github.io/warguide.hackerschool.io/workshop/python_kotlin/</link>
+      <pubDate>Fri, 17 Dec 2021 15:34:52 +0000</pubDate>
+      
+      <guid>https://filipe-varela.github.io/warguide.hackerschool.io/workshop/python_kotlin/</guid>
+      <description>&lt;p&gt;Tanto como o Python como Kotlin têm bastante parecenças entre si, podendo ser necessário acrescentar um indicador ou chavetas para delimitar os blocos de código.
+De seguida, mostra-se alguns exemplos de código que, quando executados, irão produzir o mesmo resultado em ambos os casos:&lt;/p&gt;
+&lt;p&gt;Python:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Declaração de variáveis&lt;/span&gt;
+a &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+b &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# Declaração de funções/métodos&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;soma&lt;/span&gt; (val1, val2):
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; val1 &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; val2
+&lt;span style=&#34;color:#75715e&#34;&gt;# Mostrar o resultado&lt;/span&gt;
+print(soma(a,b)) &lt;span style=&#34;color:#75715e&#34;&gt;# a+b=3&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Kotlin:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-kotlin&#34; data-lang=&#34;kotlin&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// Declaração de variáveis
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; a : Int = &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;// É opcional indicar o seu tipo
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; b = &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;// Declaração de funções/métodos
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;fun&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;soma&lt;/span&gt; (val1:Int, val2:Int) : Int {
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; val1 + val2
+}
+
+println(soma(a,b)) &lt;span style=&#34;color:#75715e&#34;&gt;// a+b=3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h3 id=&#34;para-fors-e-ifs&#34;&gt;Para &lt;code&gt;for&lt;/code&gt;&amp;rsquo;s e &lt;code&gt;if&lt;/code&gt;&amp;rsquo;s&lt;/h3&gt;
+&lt;p&gt;Python:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# for’s&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; i &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; range(&lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;):
+    print(i)
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# if’s&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (condition):
+    &lt;span style=&#34;color:#75715e&#34;&gt;# verdadeiro&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt;:
+    &lt;span style=&#34;color:#75715e&#34;&gt;# falso&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Kotlin:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-kotlin&#34; data-lang=&#34;kotlin&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// for’s
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; (i &lt;span style=&#34;color:#66d9ef&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0.&lt;/span&gt;.&lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;) {
+    println(i)
+}
+
+&lt;span style=&#34;color:#75715e&#34;&gt;// if’s
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (condition) {
+    &lt;span style=&#34;color:#75715e&#34;&gt;// verdadeiro
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;} &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; {
+    &lt;span style=&#34;color:#75715e&#34;&gt;// falso
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h3 id=&#34;mapeamento-de-várias-condições&#34;&gt;Mapeamento de várias condições&lt;/h3&gt;
+&lt;p&gt;Python prévio à versão &lt;a href=&#34;https://docs.python.org/3/whatsnew/3.10.html&#34;&gt;3.10&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;valor &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (valor&lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;):
+    print(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Zero&amp;#34;&lt;/span&gt;)
+&lt;span style=&#34;color:#66d9ef&#34;&gt;elif&lt;/span&gt; (valor&lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;):
+    valor &lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;elif&lt;/span&gt; (valor&lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;):
+    do_something()
+&lt;span style=&#34;color:#75715e&#34;&gt;# ...&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt;:
+    print(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Outra qualquer&amp;#34;&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Pyhton 3.10 (os highlights pelos vistos ainda não funcionam pois esta versão é bastante recente)&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;valor &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
+
+match valor:
+    case &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;:
+        print(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Zero&amp;#34;&lt;/span&gt;)
+    case &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;:
+        valor &lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+    case &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;:
+        do_something()
+    &lt;span style=&#34;color:#75715e&#34;&gt;# ...&lt;/span&gt;
+    case _:
+        print(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Outra qualquer&amp;#34;&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Kotlin&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-kotlin&#34; data-lang=&#34;kotlin&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// when’s
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; valor = &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;when&lt;/span&gt;(valor) {
+    &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt; println(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Zero&amp;#34;&lt;/span&gt;)
+    &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt; valor.inc()
+    &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt; {
+        &lt;span style=&#34;color:#75715e&#34;&gt;// Se o statement for mais que uma linha de código, 
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#75715e&#34;&gt;// usar esta nomenclatura
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;        doSomething() 
+    }
+&lt;span style=&#34;color:#75715e&#34;&gt;// ... 
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt; {
+        println(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Outra qualquer&amp;#34;&lt;/span&gt;)
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>JAVA VS Kotlin</title>
+      <link>https://filipe-varela.github.io/warguide.hackerschool.io/workshop/java_kotlin/</link>
+      <pubDate>Fri, 17 Dec 2021 15:34:47 +0000</pubDate>
+      
+      <guid>https://filipe-varela.github.io/warguide.hackerschool.io/workshop/java_kotlin/</guid>
+      <description>&lt;h2 id=&#34;java&#34;&gt;JAVA&lt;/h2&gt;
+&lt;p&gt;Por muito tempo, &lt;a href=&#34;https://developer.android.com/codelabs/build-your-first-android-app#0&#34;&gt;JAVA&lt;/a&gt; foi a linguagem de programação para Android.
+Sendo uma linguagem de programação orientada por objetos &lt;em&gt;antiga&lt;/em&gt;, é precisamente uma linguagem potente, próxima da linguagem máquina e, ao mesmo tempo, tem um grande suporte na internet.
+Para quem quiser experimentar em mexer em JAVA, recomendo JAVA 1.8, dado por ter imensas ferramentas semelhantes às linguagens de programação atuais e novas.&lt;/p&gt;
+&lt;h2 id=&#34;kotlin&#34;&gt;Kotlin&lt;/h2&gt;
+&lt;p&gt;Por outro lado, dado por não haver uma linguagem de programação dedicada e adaptada ao Android, a Google decidiu em desenvolver uma linguagem baseada em JAVA que conseguisse prevenir/cobrir os problemas existentes com esta última - &lt;a href=&#34;https://kotlinlang.org/docs/android-overview.html&#34;&gt;Kotlin&lt;/a&gt;.
+Kotlin é, tal como o JAVA, uma linguagem orientada por objetos e contem bastante semelhanças com linguagens recentes como Python ou Javascript, tornando-se uma linguagem ideal para iniciantes poderem programar.
+Não só isso, mas como partilha o mesmo encoder e, consecutivamente, a &lt;em&gt;&lt;a href=&#34;https://pt.wikipedia.org/wiki/M%C3%A1quina_virtual_Java&#34;&gt;JAVA Virtual Machine (JVM)&lt;/a&gt;&lt;/em&gt;, Kotlin e JAVA podem coexistir no mesmo projeto sem haver perdas de performance e/ou de incompatibilidades.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../images/jvm.png&#34; alt=&#34;JVM&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Para este workshop, foi usado o Kotlin pela sua simplicidade e por agora ser a linguagem oficial, ditada pela Google, no desenvolvimento de aplicações Android.
+Para além disso, o documento que se irá alterar, inicialmente, será o &lt;code&gt;MainActivity.kt&lt;/code&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Exemplo do Frotend</title>
       <link>https://filipe-varela.github.io/warguide.hackerschool.io/workshop/exemplo_frotend/</link>
       <pubDate>Fri, 17 Dec 2021 15:32:02 +0000</pubDate>
@@ -104,7 +430,34 @@ Neste caso, iremos colocar esta linha no botão e necessitar de referenciar o te
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;../images/exemplo_frotend_2.png&#34; alt=&#34;Exemplo 2&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Sendo que se acrescentou a linha &lt;code&gt;layout_centerHorizontal&lt;/code&gt; para o botão ficasse centrado horizontalmente com o seu parente.&lt;/p&gt;
 &lt;p&gt;Está-se por concluído, por enquanto o frotend desta secção.&lt;/p&gt;
-</description>
+&lt;h2 id=&#34;exemplo-completo&#34;&gt;Exemplo completo&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;utf-8&amp;#34;?&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;RelativeLayout&lt;/span&gt;
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;xmlns:android=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;http://schemas.android.com/apk/res/android&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;xmlns:app=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;http://schemas.android.com/apk/res-auto&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;xmlns:tools=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;http://schemas.android.com/tools&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;android:layout_width=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;match_parent&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;android:layout_height=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;match_parent&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;tools:context=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;.MainActivity&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;
+
+    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;TextView&lt;/span&gt;
+        &lt;span style=&#34;color:#a6e22e&#34;&gt;android:id=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;@+id/txt_menu&amp;#34;&lt;/span&gt;
+        &lt;span style=&#34;color:#a6e22e&#34;&gt;android:layout_width=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;wrap_content&amp;#34;&lt;/span&gt;
+        &lt;span style=&#34;color:#a6e22e&#34;&gt;android:layout_height=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;wrap_content&amp;#34;&lt;/span&gt;
+        &lt;span style=&#34;color:#a6e22e&#34;&gt;android:text=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Hello World!&amp;#34;&lt;/span&gt;
+        &lt;span style=&#34;color:#a6e22e&#34;&gt;android:layout_centerInParent=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;true&amp;#34;&lt;/span&gt;
+        &lt;span style=&#34;color:#f92672&#34;&gt;/&amp;gt;&lt;/span&gt;
+
+    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;Button&lt;/span&gt;
+        &lt;span style=&#34;color:#a6e22e&#34;&gt;android:layout_width=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;wrap_content&amp;#34;&lt;/span&gt;
+        &lt;span style=&#34;color:#a6e22e&#34;&gt;android:layout_height=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;wrap_content&amp;#34;&lt;/span&gt;
+        &lt;span style=&#34;color:#a6e22e&#34;&gt;android:text=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Click me!&amp;#34;&lt;/span&gt;
+        &lt;span style=&#34;color:#a6e22e&#34;&gt;android:layout_centerHorizontal=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;true&amp;#34;&lt;/span&gt;
+        &lt;span style=&#34;color:#a6e22e&#34;&gt;android:layout_below=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;@+id/txt_menu&amp;#34;&lt;/span&gt;
+        &lt;span style=&#34;color:#f92672&#34;&gt;/&amp;gt;&lt;/span&gt;
+        
+&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/RelativeLayout&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     
     <item>
@@ -283,12 +636,12 @@ Entretanto, qualquer material pode ser visto &lt;a href=&#34;https://drive.googl
 &lt;/li&gt;
 &lt;li&gt;Backend
 &lt;ol&gt;
-&lt;li&gt;Java VS Kotlin&lt;/li&gt;
-&lt;li&gt;Python &amp;amp; Kotlin&lt;/li&gt;
-&lt;li&gt;Kotlin Trivia&lt;/li&gt;
-&lt;li&gt;Null Safety&lt;/li&gt;
-&lt;li&gt;Conexão de Backend com Frotend&lt;/li&gt;
-&lt;li&gt;Exemplo prático&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../java_kotlin&#34;&gt;Java VS Kotlin&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../python_kotlin&#34;&gt;Python &amp;amp; Kotlin&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../kotlin_trivia&#34;&gt;Kotlin Trivia&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../null_safety&#34;&gt;Null Safety&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../conexao_frotend_backend&#34;&gt;Conexão de Backend com Frotend&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../exemplo_backend&#34;&gt;Exemplo prático&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ol&gt;

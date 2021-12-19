@@ -204,7 +204,34 @@ Neste caso, iremos colocar esta linha no botão e necessitar de referenciar o te
 </code></pre></div><p><img src="../images/exemplo_frotend_2.png" alt="Exemplo 2"></p>
 <p>Sendo que se acrescentou a linha <code>layout_centerHorizontal</code> para o botão ficasse centrado horizontalmente com o seu parente.</p>
 <p>Está-se por concluído, por enquanto o frotend desta secção.</p>
+<h2 id="exemplo-completo">Exemplo completo</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
+<span style="color:#f92672">&lt;RelativeLayout</span>
+    <span style="color:#a6e22e">xmlns:android=</span><span style="color:#e6db74">&#34;http://schemas.android.com/apk/res/android&#34;</span>
+    <span style="color:#a6e22e">xmlns:app=</span><span style="color:#e6db74">&#34;http://schemas.android.com/apk/res-auto&#34;</span>
+    <span style="color:#a6e22e">xmlns:tools=</span><span style="color:#e6db74">&#34;http://schemas.android.com/tools&#34;</span>
+    <span style="color:#a6e22e">android:layout_width=</span><span style="color:#e6db74">&#34;match_parent&#34;</span>
+    <span style="color:#a6e22e">android:layout_height=</span><span style="color:#e6db74">&#34;match_parent&#34;</span>
+    <span style="color:#a6e22e">tools:context=</span><span style="color:#e6db74">&#34;.MainActivity&#34;</span><span style="color:#f92672">&gt;</span>
 
+    <span style="color:#f92672">&lt;TextView</span>
+        <span style="color:#a6e22e">android:id=</span><span style="color:#e6db74">&#34;@+id/txt_menu&#34;</span>
+        <span style="color:#a6e22e">android:layout_width=</span><span style="color:#e6db74">&#34;wrap_content&#34;</span>
+        <span style="color:#a6e22e">android:layout_height=</span><span style="color:#e6db74">&#34;wrap_content&#34;</span>
+        <span style="color:#a6e22e">android:text=</span><span style="color:#e6db74">&#34;Hello World!&#34;</span>
+        <span style="color:#a6e22e">android:layout_centerInParent=</span><span style="color:#e6db74">&#34;true&#34;</span>
+        <span style="color:#f92672">/&gt;</span>
+
+    <span style="color:#f92672">&lt;Button</span>
+        <span style="color:#a6e22e">android:layout_width=</span><span style="color:#e6db74">&#34;wrap_content&#34;</span>
+        <span style="color:#a6e22e">android:layout_height=</span><span style="color:#e6db74">&#34;wrap_content&#34;</span>
+        <span style="color:#a6e22e">android:text=</span><span style="color:#e6db74">&#34;Click me!&#34;</span>
+        <span style="color:#a6e22e">android:layout_centerHorizontal=</span><span style="color:#e6db74">&#34;true&#34;</span>
+        <span style="color:#a6e22e">android:layout_below=</span><span style="color:#e6db74">&#34;@+id/txt_menu&#34;</span>
+        <span style="color:#f92672">/&gt;</span>
+        
+<span style="color:#f92672">&lt;/RelativeLayout&gt;</span>
+</code></pre></div>
         </div>
         
 
@@ -229,7 +256,9 @@ Neste caso, iremos colocar esta linha no botão e necessitar de referenciar o te
     
         
     <div class="pagination post-pagination">
-        <div class="left pagination-item disabled">
+        <div class="left pagination-item ">
+            
+                <a href="/warguide.hackerschool.io/workshop/java_kotlin/">JAVA VS Kotlin</a>
             
         </div>
         <div class="right pagination-item ">
